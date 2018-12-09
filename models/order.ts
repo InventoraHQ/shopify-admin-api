@@ -9,6 +9,7 @@ import { ShippingLine } from "./shipping_line";
 import { DiscountCode } from "./discount_code";
 import { ClientDetails } from "./client_details";
 import { PaymentDetails } from "./payment_details";
+import { NoteAttribute } from "./note_attribute";
 
 // Enum imports
 import { FinancialStatus } from "../enums/financial_status";
@@ -88,10 +89,7 @@ export interface Order extends ShopifyObject {
     note?: string;
 
     /// Extra information that is added to the order.    
-    note_attributes?: {
-        name?: string;
-        value?: string;
-    }
+    note_attributes?: NoteAttribute[];
 
     /// Numerical identifier unique to the shop. A number is sequential and starts at 1000.    
     number?: number;

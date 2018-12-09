@@ -18,7 +18,9 @@ export interface ProductBaseOptions {
     collection_id?: string;
 }
 
-export interface ProductListOptions extends ProductBaseOptions, DateOptions {
+export interface ProductCountOptions extends ProductBaseOptions, DateOptions, PublishedOptions {}
+
+export interface ProductListOptions extends ProductBaseOptions, ListOptions, DateOptions, PublishedOptions, FieldOptions {
 
     /**
      * A comma-separated list of product ids
