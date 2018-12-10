@@ -9,4 +9,5 @@ export * from "./products";
 export * from "./product_collection";
 export * from "./redirects";
 export * from "./script_tags";
+export * from "./transactions";
 export * from "./webhooks";
