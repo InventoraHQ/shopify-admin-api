@@ -1,103 +1,147 @@
 import { TaxLine } from "./tax_line";
 import { ShopifyObject } from "./base";
 import { LineItemProperty } from "./line_item_property";
+import { DiscountAllocation } from "./discount_allocation";
+import { PriceSet } from "./price_set";
 
 export interface LineItem extends ShopifyObject {
-    /// <summary>
-    /// The amount available to fulfill. This is the quantity - max(refunded_quantity, fulfilled_quantity) - pending_fulfilled_quantity.
-    /// </summary>
-    fulfillable_quantity?: number;
+    /**
+     * does not always exist
+     */
+    destination_location?: Location;
 
-    /// <summary>
-    /// Service provider who is doing the fulfillment. Valid values are either "manual" or the name of the provider. eg: "amazon", "shipwire", etc.
-    /// </summary>
-    fulfillment_service?: string;
+    /**
+     *  An ordered list of amounts allocated by discount applications. Each discount allocation is associated to a particular discount application.
+     */
+    discount_allocations: DiscountAllocation[];
 
-    /// <summary>
-    /// The fulfillment status of this line item. Known values are 'fulfilled', 'null' and 'partial'.
-    /// </summary>
-    fulfillment_status?: string;
+    /**
+     *  The amount available to fulfill. This is the quantity - max(refunded_quantity, fulfilled_quantity) - pending_fulfilled_quantity.
+     */
+    fulfillable_quantity: number;
 
-    /// <summary>
-    /// The weight of the item in grams.
-    /// </summary>
-    grams?: number;
+    /**
+     *  Service provider who is doing the fulfillment. Valid values are either "manual" or the name of the provider. eg: "amazon", "shipwire", etc.
+     */
+    fulfillment_service: string;
 
-    /// <summary>
-    /// The price of the item before discounts have been applied.
-    /// </summary>
-    /// <remarks>Shopify returns this value as a string.</remarks>
-    price?: number;
+    /**
+     *  The fulfillment status of this line item. Known values are 'fulfilled', 'null' and 'partial'.
+     */
+    fulfillment_status: string;
 
-    /// <summary>
-    /// The unique numeric identifier for the product in the fulfillment. Can be null if the original product associated with the order is deleted at a later date
-    /// </summary>
-    product_id?: number;
+    /**
+     *  States whether the order used a gift card.
+     */
+    gift_card: boolean;
 
-    /// <summary>
-    /// The number of products that were purchased.
-    /// </summary>
-    quantity?: number;
+    /**
+     *  The weight of the item in grams.
+     */
+    grams: number;
 
-    /// <summary>
-    /// States whether or not the fulfillment requires shipping.
-    /// </summary>
-    requires_shipping?: boolean;
+    /**
+     *  The name of the product variant.
+     */
+    name: string;
 
-    /// <summary>
-    /// A unique identifier of the item in the fulfillment.
-    /// </summary>
-    sku?: string;
+    /**
+     * does not always exist
+     */
+    origin_location?: Location;
 
-    /// <summary>
-    /// The title of the product.
-    /// </summary>
-    title?: string;
+    /**
+     *  The price of the item before taxes have been applied.
+     */
+    pre_tax_price: string;
 
-    /// <summary>
-    /// The id of the product variant. Can be null if the product purchased is not a variant.
-    /// </summary>
-    variant_id?: number;
+    /**
+     *  The pre-tax price of the item in shop and presentment currencies.
+     *  (BETA)
+     */
+    pre_tax_price_set: PriceSet;
 
-    /// <summary>
-    /// The title of the product variant. Can be null if the product purchased is not a variant.
-    /// </summary>
-    variant_title?: string;
+    /**
+     *  The price of the item before discounts have been applied.
+     */
+    price: string;
 
-    /// <summary>
-    /// The name of the product variant.
-    /// </summary>
-    name?: string;
+    /**
+     *  The price of the item in shop and presentment currencies.
+     *  (BETA)
+     */
+    price_set: PriceSet;
 
-    /// <summary>
-    /// The name of the supplier of the item.
-    /// </summary>
-    vendor?: string;
+    /**
+     * The unique numeric identifier for the product in the fulfillment. Can be null if the original product associated with the order is deleted at a later date
+     */
+    product_id: number;
 
-    /// <summary>
-    /// States whether the order used a gift card.
-    /// </summary>
-    gift_card?: boolean;
+    /**
+     *  An array of custom information for an item that has been added to the cart.
+     *  Often used to provide product customization options.
+     *  An array of <see cref="ShopifyTaxLine"/> objects, each of which details the taxes applicable to this <see cref="ShopifyLineItem"/>.
+     */
+    properties: LineItemProperty[];
 
-    /// <summary>
-    /// States whether or not the product was taxable.
-    /// </summary>
-    taxable?: boolean;
+    /**
+     *  The number of products that were purchased.
+     */
+    quantity: number;
 
-    /// <summary>
-    /// An array of <see cref="ShopifyTaxLine"/> objects, each of which details the taxes applicable to this <see cref="ShopifyLineItem"/>.
-    /// </summary>
-    tax_lines?: TaxLine[];
+    /**
+     *  States whether or not the fulfillment requires shipping.
+     */
+    requires_shipping: boolean;
 
-    /// <summary>
-    /// The total discount amount applied to this line item. This value is not subtracted in the line item price.
-    /// </summary>
-    total_discount?: number;
+    /**
+     *  A unique identifier of the item in the fulfillment.
+     */
+    sku: string;
 
-    /// <summary>
-    /// An array of custom information for an item that has been added to the cart.
-    /// Often used to provide product customization options.
-    /// An array of <see cref="ShopifyTaxLine"/> objects, each of which details the taxes applicable to this <see cref="ShopifyLineItem"/>.
-    /// </summary>
-    properties?: LineItemProperty[];
+    /**
+     *  States whether or not the product was taxable.
+     */
+    taxable: boolean;
+
+    /**
+     *  An array of <see cref="ShopifyTaxLine"/> objects, each of which details the taxes applicable to this <see cref="ShopifyLineItem"/>.
+     */
+    tax_lines: TaxLine[];
+
+    /**
+     *  The title of the product.
+     */
+    title: string;
+
+    /**
+     *  The total discount amount applied to this line item. This value is not subtracted in the line item price.
+     */
+    total_discount: string;
+
+    /**
+     *  The total discount amount applied to this line item in shop and presentment currencies.
+     *  (BETA)
+     */
+    total_discount_set: PriceSet;
+
+    /**
+     *  The id of the product variant. Can be null if the product purchased is not a variant.
+     */
+    variant_id: number;
+
+    /**
+     *  TODO: What is this? (known values: "shopify", null)
+     */
+    variant_inventory_management: null | string;
+
+    /**
+     *  The title of the product variant. Can be null if the product purchased is not a variant.
+     */
+    variant_title: string;
+
+    /**
+     *  The name of the supplier of the item.
+     */
+    vendor: string;
 }
