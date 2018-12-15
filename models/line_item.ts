@@ -67,6 +67,11 @@ export interface LineItem extends ShopifyObject {
     price: string;
 
     /**
+     * TODO: what does this mean?
+     */
+    product_exists: boolean;
+
+    /**
      *  The price of the item in shop and presentment currencies.
      *  (BETA)
      */

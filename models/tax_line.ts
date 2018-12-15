@@ -4,15 +4,21 @@ export interface TaxLine extends ShopifyObject {
     /**
      * The amount of tax to be charged.
      */
-    price?: number;
+    price: string;
+
+    /**
+     * The amount of tax to be charged, in shop and presentment currencies.
+     * (BETA)
+     */
+    price_set: PriceSet;
 
     /**
      * The rate of tax to be applied.
      */
-    rate?: number;
+    rate: number;
 
     /**
      * The name of the tax.
      */
-    title?: string;
+    title: string;
 }

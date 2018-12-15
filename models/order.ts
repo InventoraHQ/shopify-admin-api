@@ -176,7 +176,8 @@ export interface Order extends ShopifyObject {
     /// Price of the order before shipping and taxes    
     subtotal_price: string;
 
-    /// Price of the order before shipping and taxes, in shop and presentment currencies    
+    /// Price of the order before shipping and taxes, in shop and presentment currencies
+    /// (BETA)
     subtotal_price_set: PriceSet;
 
     /// Tags are additional short descriptors, commonly used for filtering and searching, formatted as a string of comma-separated values.
@@ -198,12 +199,14 @@ export interface Order extends ShopifyObject {
     total_discounts: string;
 
     /// The total amount of the discounts applied to the price of the order, in shop and presentment currencies.
+    /// (BETA)
     total_discounts_set: PriceSet;
 
     /// The sum of all the prices of all the items in the order.    
     total_line_items_price: string;
 
     /// The sum of all the prices of all the items in the order, in shop and presentment currencies.
+    /// (BETA)
     total_line_items_price_set: PriceSet;
 
     /// The sum of all the prices of all the items in the order, with taxes and discounts included (must be positive).
