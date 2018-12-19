@@ -1,8 +1,10 @@
 import { ShopifyObject } from "./base";
 import { Transaction } from "./transaction";
 import { LineItem } from './line_item';
+import { PriceSet } from './price_set';
 
 export interface Refund extends ShopifyObject {
+    admin_graphql_api_id: string;
     /**
      *  The date and time (ISO 8601 format) when the refund was created.
      */
@@ -12,10 +14,6 @@ export interface Refund extends ShopifyObject {
      */
     id: number;
     /**
-     *  The unique identifier for the order the refund belongs to.
-     */
-    order_id: number;
-    /**
      *  An optional note attached to a refund.
      */
     note: string | null;
@@ -23,6 +21,10 @@ export interface Refund extends ShopifyObject {
      *  A list of order adjustments attached to the refund.
      */
     order_adjustments: OrderAdjustment[];
+    /**
+     *  The unique identifier for the order the refund belongs to.
+     */
+    order_id: number;
     /**
      *  The date and time (ISO 8601 format) when the refund was imported. This value can be set to a date in the past when importing from other systems. If no value is provided, then it will be auto-generated as the current time in Shopify.
      */
