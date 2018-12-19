@@ -13,7 +13,13 @@ export interface Product extends ShopifyObject {
     /** 
      * The description of the product, complete with HTML formatting.
      */ 
-    body_html?: string;
+    body_html: string | null;
+
+    /**
+     * A human-friendly unique string for the Product automatically generated from its title.
+     * They are used by the Liquid templating language to refer to objects.
+     */
+    handle: string | null;
 
     /** 
      * The date and time when the product was created. The API returns this value in ISO 8601 format.
@@ -40,12 +46,6 @@ export interface Product extends ShopifyObject {
      * A categorization that a product can be tagged with, commonly used for filtering and searching.
      */ 
     product_type?: string;
-
-    /** 
-     * A human-friendly unique string for the Product automatically generated from its title.
-     * They are used by the Liquid templating language to refer to objects.
-     */ 
-    handle?: string;
 
     /** 
      * The suffix of the liquid template being used.

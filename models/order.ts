@@ -40,11 +40,11 @@ export interface Order extends ShopifyObject {
     /// Unique identifier for a particular cart that is attached to a particular order.    
     cart_token: null | string;
 
-    // TODO - what is this? (probably deprecated, always null)
-    checkout_id: null | any;
+    // TODO - what is this?
+    checkout_id: null | number;
 
-    // TODO - what is this? (probably deprecated, always null)
-    checkout_token: null | any;
+    // TODO - what is this?
+    checkout_token: null | string;
 
     /// A <see cref="ShopifyClientDetails"/> object containing information about the client.
     client_details?: ClientDetails;

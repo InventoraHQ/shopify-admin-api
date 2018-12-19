@@ -4,7 +4,7 @@ export interface DiscountAllocation {
     /**
      *  The discount amount allocated to the line.
      */
-    amount: number | string;
+    amount: number;
 
     /**
      *  The discount amount allocated to the line item in shop and presentment currencies.
@@ -15,5 +15,5 @@ export interface DiscountAllocation {
     /**
      *  The index of the associated discount application in the order's discount_applications list.
      */
-    discount_application_index;
+    discount_application_index: number;
 }

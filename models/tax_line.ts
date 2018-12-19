@@ -1,4 +1,5 @@
 import { ShopifyObject } from "./base";
+import { PriceSet } from "./price_set";
 
 export interface TaxLine extends ShopifyObject {
     /**
