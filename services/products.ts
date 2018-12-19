@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Product, Transaction } from '../models';
+import { Product } from '../models';
 
 export class Products extends BaseService {
     constructor(shopDomain: string, accessToken: string) {
@@ -12,7 +12,7 @@ export class Products extends BaseService {
      * @param options Options for filtering the results.
      * @see https://help.shopify.com/api/reference/product#count
      */
-    public count(options?: Options.ProductBaseOptions & Options.DateOptions & Options.PublishedOptions) {
+    public count(options?: Options.ProductCountOptions) {
         return this.createRequest<number>("GET", "count.json", "count", options);
     }
 
@@ -20,7 +20,7 @@ export class Products extends BaseService {
      * Gets a list of up to 250 of the shop's Products.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.ProductListOptions & Options.PublishedOptions & Options.ListOptions & Options.FieldOptions) {
+    public list(options?: Options.ProductListOptions) {
         return this.createRequest<Product[]>("GET", ".json", "products", options);
     }
 

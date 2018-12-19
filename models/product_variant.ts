@@ -19,7 +19,7 @@ export interface ProductVariant extends ShopifyObject {
     /**
      * The competitors price for the same item.
      */
-    compare_at_price?: any;
+    compare_at_price?: string | null;
 
     /**
      * The date and time when the product variant was created. The API returns this value in ISO 8601 format.

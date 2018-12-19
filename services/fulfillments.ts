@@ -3,7 +3,7 @@ import { Fulfillment } from '../models';
 import { BaseService } from '../infrastructure';
 
 /**
- * A service for manipulating a blog's fulfillments.
+ * A service for manipulating an order's fulfillments.
  */
 export class Fulfillments extends BaseService {
     constructor(shopDomain: string, accessToken: string) {
@@ -16,7 +16,7 @@ export class Fulfillments extends BaseService {
 
     /**
      * Creates a new fulfillment.
-     * @param orderId Id of the blog that the fulfillment will belong to.
+     * @param orderId Id of the order that the fulfillment will belong to.
      * @param fulfillment The fulfillment being created.
      */
     public create(orderId: number, fulfillment: Fulfillment) {
@@ -25,7 +25,7 @@ export class Fulfillments extends BaseService {
 
     /**
      * Updates an fulfillment with the given id.
-     * @param orderId Id of the blog that the fulfillment belongs to.
+     * @param orderId Id of the order that the fulfillment belongs to.
      * @param fulfillmentId Id of the fulfillment to update.
      * @param fulfillment The updated fulfillment.
      */
@@ -35,7 +35,7 @@ export class Fulfillments extends BaseService {
 
     /**
      * Gets an fulfillment with the given id.
-     * @param orderId Id of the blog that the fulfillment belongs to.
+     * @param orderId Id of the order that the fulfillment belongs to.
      * @param fulfillmentId Id of the fulfillment being retrieved.
      * @param options Options for filtering the result.
      */
@@ -45,7 +45,7 @@ export class Fulfillments extends BaseService {
 
     /**
      * Lists up to 250 fulfillments for the given order.
-     * @param orderId Id of the blog that the fulfillments belong to.
+     * @param orderId Id of the order that the fulfillments belong to.
      * @param options Options for filtering the results.
      */
     public list(orderId: number, options?: Options.FieldOptions & Options.DateOptions & Options.ListOptions) {
@@ -54,7 +54,7 @@ export class Fulfillments extends BaseService {
 
     /**
      * Counts the fulfillments on the given order.
-     * @param orderId Id of the blog that the fulfillments belong to.
+     * @param orderId Id of the order that the fulfillments belong to.
      * @param options Options for filtering the results.
      */
     public count(orderId: number, options?: Options.DateOptions) {
@@ -63,7 +63,7 @@ export class Fulfillments extends BaseService {
 
     /**
      * Opens a fulfillment with the given fulfillmentId.
-     * @param orderId Id of the blog that the fulfillments belong to.
+     * @param orderId Id of the order that the fulfillments belong to.
      * @param fulfillmentId The fulfillment's id.
      */
     public open(orderId: number, fulfillmentId: number) {
