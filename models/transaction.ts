@@ -6,6 +6,8 @@ import { TransactionKind } from "../enums/transaction_kind";
 import { TransactionStatus } from "../enums/transaction_status";
     
 export interface Transaction extends ShopifyObject {
+    id: number,
+    admin_graphql_api_id: string,
     /**
      * The amount of money that the transaction was for. Note: Shopify may return this property as a string.
      */
@@ -111,7 +113,7 @@ export interface Transaction extends ShopifyObject {
     /**
      * Whether the transaction is for testing purposes.
      */
-    test?: boolean;
+    test: boolean;
 
     /**
      * The unique identifier for the user.
