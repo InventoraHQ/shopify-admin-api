@@ -12,18 +12,18 @@ export interface Product extends ShopifyObject {
     /** 
      * The date and time when the product was created. The API returns this value in ISO 8601 format.
      */ 
-    created_at: string;
+    created_at?: string;
 
     /**
      * A human-friendly unique string for the Product automatically generated from its title.
      * They are used by the Liquid templating language to refer to objects.
      */
-    handle: string | null;
+    handle?: string | null;
 
     /** 
      * A list of image objects, each one representing an image associated with the product.
      */ 
-    images: ProductImage[];
+    images?: ProductImage[];
 
     /** 
      * Equal to the first item of `ìmages`, if it exists. Only set if images exist.
@@ -45,58 +45,57 @@ export interface Product extends ShopifyObject {
      * Products are based on permutations of these options.
      * A product may have a maximum of 3 options. 255 characters limit each.
      */
-    options: ProductOption[];
+    options?: ProductOption[];
 
     /**
      * A categorization that a product can be tagged with, commonly used for filtering and searching.
      */ 
-    product_type: string;
+    product_type?: string;
 
     /** 
      * The date and time when the product was published. The API returns this value in ISO 8601 format. 
      * Set to NULL to unpublish a product
      */ 
-    published_at: string | null;
+    published_at?: string | null;
 
     /** 
      * The sales channels in which the product is visible.
      */ 
-    published_scope: string;
+    published_scope?: string;
 
     /**
      * A categorization that a product can be tagged with, commonly used for filtering and searching.
      * Each comma-separated tag has a character limit of 255.
      */
-    tags: string;
+    tags?: string;
 
     /** 
      * The suffix of the liquid template being used.
      * By default, the original template is called product.liquid, without any suffix.
      * Any additional templates will be: product.suffix.liquid.
      */ 
-    template_suffix: string | null;
+    template_suffix?: string | null;
 
     /** 
      * The name of the product. In a shop's catalog, clicking on a product's title takes you to that product's page.
      * On a product's page, the product's title typically appears in a large font.
      */ 
-    title: string;
+    title?: string;
 
     /** 
      * The date and time when the product was last modified. The API returns this value in ISO 8601 format.
      */ 
-    updated_at: string;
+    updated_at?: string;
 
     /** 
      * A list of variant objects, each one representing a slightly different version of the product.
      * For example, if a product comes in different sizes and colors, each size and color permutation (such as "small black", "medium black", "large blue"), would be a variant.
      * To reorder variants, update the product with the variants in the desired order.The position attribute on the variant will be ignored.
      */ 
-    variants: ProductVariant[];
+    variants?: ProductVariant[];
 
     /** 
      * The name of the vendor of the product.
      */ 
-    vendor: string;
-
+    vendor?: string;
 }
