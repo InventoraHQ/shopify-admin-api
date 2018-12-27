@@ -13,7 +13,7 @@ export class Discounts extends BaseService {
     /**
       * Creates a new discount.
       */
-    public create(discount: Discount) {
+    public create(discount: Partial<Discount>) {
         return this.createRequest<Discount>("POST", ".json", "discount", { discount: discount });
     }
 

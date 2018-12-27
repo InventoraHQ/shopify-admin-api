@@ -14,7 +14,7 @@ export class Blogs extends BaseService {
      * Creates a new blog.
      * @param blog The Blog being created.
      */
-    public create(blog: Blog) {
+    public create(blog: Partial<Blog>) {
         return this.createRequest<Blog>("POST", `.json`, "blog", { blog });
     }
 

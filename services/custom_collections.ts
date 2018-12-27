@@ -38,7 +38,7 @@ export class CustomCollections extends BaseService {
      * @param collection The collection being created.
      * @param options Options for creating the collection.
      */
-    public create(collection: CustomCollection) {
+    public create(collection: Partial<CustomCollection>) {
         return this.createRequest<CustomCollection>("POST", ".json", "custom_collection", { custom_collection: collection });
     }
 

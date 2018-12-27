@@ -37,7 +37,7 @@ export class Webhooks extends BaseService {
     /**
      * Creates a new webhook.
      */
-    public create(webhook: Webhook) {
+    public create(webhook: Partial<Webhook>) {
         return this.createRequest<Webhook>("POST", ".json", "webhook", { webhook });
     }
 

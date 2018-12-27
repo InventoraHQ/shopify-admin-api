@@ -37,7 +37,7 @@ export class Redirects extends BaseService {
     /**
      * Creates a new redirect.
      */
-    public create(redirect: Redirect) {
+    public create(redirect: Partial<Redirect>) {
         return this.createRequest<Redirect>("POST", ".json", "redirect", { redirect });
     }
 

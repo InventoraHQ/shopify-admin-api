@@ -38,7 +38,7 @@ export class SmartCollections extends BaseService {
      * @param collection The collection being created.
      * @param options Options for creating the collection.
      */
-    public create(collection: SmartCollection) {
+    public create(collection: Partial<SmartCollection>) {
         return this.createRequest<SmartCollection>("POST", ".json", "smart_collection", { smart_collection: collection });
     }
 

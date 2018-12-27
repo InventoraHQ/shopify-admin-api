@@ -24,7 +24,7 @@ export class PriceRules extends BaseService {
      * a price rule to be accessible via the admin section of Shopify, you will need to create a 
      * discount code as well. 
      */
-    public create(PriceRule: PriceRule) {
+    public create(PriceRule: Partial<PriceRule>) {
         return this.createRequest<PriceRule>("POST", ".json", "price_rule", { price_rule: PriceRule });
     }
 

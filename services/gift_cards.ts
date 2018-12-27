@@ -13,7 +13,7 @@ export class GiftCards extends BaseService {
     /**
      * Creates a new Gift Card.
      */
-    public create(giftCard: GiftCard) {
+    public create(giftCard: Partial<GiftCard>) {
         return this.createRequest<GiftCard>("POST", ".json", "gift_card", { gift_card: giftCard });
     }
 

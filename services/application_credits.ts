@@ -13,7 +13,7 @@ export class ApplicationCredits extends BaseService {
     /**
      * Creates a new Application Credit.
      */
-    public create(credit: ApplicationCredit) {
+    public create(credit: Partial<ApplicationCredit>) {
         return this.createRequest<ApplicationCredit>("POST", ".json", "application_credit", { application_credit: credit });
     }
 

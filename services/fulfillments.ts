@@ -19,7 +19,7 @@ export class Fulfillments extends BaseService {
      * @param orderId Id of the order that the fulfillment will belong to.
      * @param fulfillment The fulfillment being created.
      */
-    public create(orderId: number, fulfillment: Fulfillment) {
+    public create(orderId: number, fulfillment: Partial<Fulfillment>) {
         return this.createRequest<Fulfillment>("POST", this.getPath(orderId, ".json"), "fulfillment", { fulfillment });
     }
 

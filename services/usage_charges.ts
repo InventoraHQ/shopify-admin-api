@@ -14,7 +14,7 @@ export class UsageCharges extends BaseService {
      * Creates a new charge.
      * @param recurringChargeId The id of the recurring charge that this usage charge belongs to.
      */
-    public create(recurringChargeId: number, charge: UsageCharge) {
+    public create(recurringChargeId: number, charge: Partial<UsageCharge>) {
         return this.createRequest<UsageCharge>("POST", `${recurringChargeId}/usage_charges.json`, "usage_charge", { usage_charge: charge });
     }
 

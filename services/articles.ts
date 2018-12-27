@@ -15,7 +15,7 @@ export class Articles extends BaseService {
      * @param blogId Id of the blog that the article will belong to.
      * @param article The article being created.
      */
-    public create(blogId: number, article: Article) {
+    public create(blogId: number, article: Partial<Article>) {
         return this.createRequest<Article>("POST", `blogs/${blogId}/articles.json`, "article", { article });
     }
 

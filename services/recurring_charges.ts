@@ -13,7 +13,7 @@ export class RecurringCharges extends BaseService {
     /**
      * Creates a new charge.
      */
-    public create(charge: RecurringCharge) {
+    public create(charge: Partial<RecurringCharge>) {
         return this.createRequest<RecurringCharge>("POST", ".json", "recurring_application_charge", { recurring_application_charge: charge });
     }
 

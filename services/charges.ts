@@ -13,7 +13,7 @@ export class Charges extends BaseService {
     /**
      * Creates a new charge.
      */
-    public create(charge: Charge) {
+    public create(charge: Partial<Charge>) {
         return this.createRequest<Charge>("POST", ".json", "application_charge", { application_charge: charge });
     }
 

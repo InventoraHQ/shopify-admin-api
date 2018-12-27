@@ -38,7 +38,7 @@ export class Products extends BaseService {
      * @param product The Product being created.
      * @param options Options for creating the Product.
      */
-    public create(product: Product) {
+    public create(product: Partial<Product>) {
         return this.createRequest<Product>("POST", ".json", "product", { product });
     }
 

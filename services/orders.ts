@@ -46,7 +46,7 @@ export class Orders extends BaseService {
      * @param order The order being created.
      * @param options Options for creating the order.
      */
-    public create(order: Order, transactions?: Transaction[], options?: Options.OrderCreateOptions) {
+    public create(order: Partial<Order>, transactions?: Transaction[], options?: Options.OrderCreateOptions) {
         return this.createRequest<Order>("POST", ".json", "order", { order: Object.assign({}, order, options, { transactions }) });
     }
 

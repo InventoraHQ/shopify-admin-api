@@ -19,7 +19,7 @@ export class Transactions extends BaseService {
      * @param orderId Id of the order that the transaction will belong to.
      * @param transaction The transaction being created.
      */
-    public create(orderId: number, transaction: Transaction) {
+    public create(orderId: number, transaction: Partial<Transaction>) {
         return this.createRequest<Transaction>("POST", this.getPath(orderId, ".json"), "transaction", { transaction });
     }
 
