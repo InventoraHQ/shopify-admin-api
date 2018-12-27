@@ -7,7 +7,7 @@ export interface Product extends ShopifyObject {
     /** 
      * The description of the product, complete with HTML formatting.
      */ 
-    body_html?: string | null;
+    body_html: string | null;
 
     /** 
      * The date and time when the product was created. The API returns this value in ISO 8601 format.
