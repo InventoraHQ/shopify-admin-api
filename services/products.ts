@@ -56,7 +56,7 @@ export class Products extends BaseService {
      * @param id The Product's id.
      */
     public delete(id: number) {
-        return this.createRequest<void>("DELETE", `${id}.json`);
+        return this.createRequest<{id: number}>("DELETE", `${id}.json`);
     }
 }
 

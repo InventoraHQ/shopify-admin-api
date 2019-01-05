@@ -1,18 +1,14 @@
+import { ShopifyObject } from './base';
 import { ProductImage } from './product_image';
 import { ProductOption } from './product_option';
 import { ProductVariant } from './product_variant';
-import { ShopifyObject } from './base';
+import { MetaFieldUpdateCreate } from './meta_field_update_create';
 
 export interface ProductUpdateCreate extends Partial<ShopifyObject> {
   /**
    * The description of the product, complete with HTML formatting.
    */
   body_html?: string | null;
-
-  /**
-   * The date and time when the product was created. The API returns this value in ISO 8601 format.
-   */
-  created_at?: string;
 
   /**
    * A human-friendly unique string for the Product automatically generated from its title.
@@ -72,11 +68,6 @@ export interface ProductUpdateCreate extends Partial<ShopifyObject> {
   title?: string;
 
   /**
-   * The date and time when the product was last modified. The API returns this value in ISO 8601 format.
-   */
-  updated_at?: string;
-
-  /**
    * A list of variant objects, each one representing a slightly different version of the product.
    * For example, if a product comes in different sizes and colors, each size and color permutation (such as "small black", "medium black", "large blue"), would be a variant.
    * To reorder variants, update the product with the variants in the desired order.The position attribute on the variant will be ignored.
@@ -93,4 +84,6 @@ export interface ProductUpdateCreate extends Partial<ShopifyObject> {
    * Property only available when a product is being updated or created not at a response
    */
   published?: boolean;
+
+  metafields?: MetaFieldUpdateCreate[];
 }
