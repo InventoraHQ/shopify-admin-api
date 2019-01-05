@@ -49,7 +49,7 @@ export class BaseService {
             for (const prop in payload) {
                 const value = payload[prop];
 
-                //Shopify expects qs array values to be joined by a comma, e.g. fields=field1,field2,field3
+                // Shopify expects qs array values to be joined by a comma, e.g. fields=field1,field2,field3
                 url.addQueryParam(prop, Array.isArray(value) ? value.join(",") : value);
             }
         }

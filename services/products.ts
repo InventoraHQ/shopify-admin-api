@@ -47,7 +47,7 @@ export class Products extends BaseService {
      * @param id The Product's id.
      * @param product The updated Product.
      */
-    public update(id: number, product: Product) {
+    public update(id: number, product: Partial<Product>) {
         return this.createRequest<Product>("PUT", `${id}.json`, "product", { product });
     }
 
