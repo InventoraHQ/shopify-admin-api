@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Product } from '../models';
+import { Product, ProductUpdateCreate } from '../models';
 
 export class Products extends BaseService {
     constructor(shopDomain: string, accessToken: string) {
@@ -38,7 +38,7 @@ export class Products extends BaseService {
      * @param product The Product being created.
      * @param options Options for creating the Product.
      */
-    public create(product: Partial<Product>) {
+    public create(product: ProductUpdateCreate) {
         return this.createRequest<Product>("POST", ".json", "product", { product });
     }
 
@@ -47,7 +47,7 @@ export class Products extends BaseService {
      * @param id The Product's id.
      * @param product The updated Product.
      */
-    public update(id: number, product: Partial<Product>) {
+    public update(id: number, product: ProductUpdateCreate) {
         return this.createRequest<Product>("PUT", `${id}.json`, "product", { product });
     }
 

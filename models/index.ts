@@ -33,6 +33,7 @@ export * from "./product";
 export * from "./product_collection";
 export * from "./product_image";
 export * from "./product_option";
+export * from "./product_update_create";
 export * from "./product_variant";
 export * from "./recurring_charge";
 export * from "./redirect";
