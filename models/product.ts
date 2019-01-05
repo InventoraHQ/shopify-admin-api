@@ -99,4 +99,9 @@ export interface Product extends ShopifyObject {
      */ 
     vendor: string;
 
+    /**
+     * Create or update published status of a product.
+     * Property only available when a product is being updated or created not at a response
+     */
+    published?: boolean;
 }
