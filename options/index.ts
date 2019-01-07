@@ -5,6 +5,7 @@ export * from "./gift_cards";
 export * from "./inventory_items";
 export * from "./inventory_levels";
 export * from "./orders";
+export * from "./pages";
 export * from "./product_collection";
 export * from "./products";
 export * from "./redirects";

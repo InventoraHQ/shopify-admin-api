@@ -73,6 +73,11 @@ export interface PublishedOptions {
 
     /**
      * Filter results to those with the given publish status.
+     * 
+     * (default: `any`)
+     * * **published**: Show only published pages.
+     * * **unpublished**: Show only unpublished pages.
+     * * **any**: Show published and unpublished pages.
      */
     published_status?: PublishedStatus;
 }

@@ -26,6 +26,7 @@ export * from "./meta_field_update_create";
 export * from "./meta_field";
 export * from "./note_attribute";
 export * from "./order";
+export * from "./page";
 export * from "./payment_details";
 export * from "./price_rule";
 export * from "./price_rule_discount_code";

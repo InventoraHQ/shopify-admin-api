@@ -32,7 +32,7 @@ export class Blogs extends BaseService {
      * @param id Id of the blog being updated.
      * @param blog The updated blog.
      */
-    public update(id: number, blog: Blog) {
+    public update(id: number, blog:  Partial<Blog>) {
         return this.createRequest<Blog>("PUT", `${id}.json`, "blog", { blog });
     }
 
