@@ -3,6 +3,7 @@ export * from "./application_credits";
 export * from "./articles";
 export * from "./assets";
 export * from "./blogs";
+export * from "./carrier_services";
 export * from "./charges";
 export * from "./custom_collections";
 export * from "./discounts";

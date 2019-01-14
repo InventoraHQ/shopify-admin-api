@@ -6,6 +6,7 @@ export * from "./article_image";
 export * from "./asset";
 export * from "./base";
 export * from "./blog";
+export * from "./carrier_service";
 export * from "./charge";
 export * from "./client_details";
 export * from "./customer";
