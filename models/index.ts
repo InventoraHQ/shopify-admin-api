@@ -8,6 +8,7 @@ export * from "./base";
 export * from "./blog";
 export * from "./carrier_service";
 export * from "./charge";
+export * from "./checkout";
 export * from "./client_details";
 export * from "./customer";
 export * from "./discount";

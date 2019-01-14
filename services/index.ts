@@ -5,6 +5,7 @@ export * from "./assets";
 export * from "./blogs";
 export * from "./carrier_services";
 export * from "./charges";
+export * from "./checkouts";
 export * from "./custom_collections";
 export * from "./discounts";
 export * from "./draft_orders";
