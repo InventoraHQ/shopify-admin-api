@@ -13,6 +13,7 @@ export * from "./inventory_levels";
 export * from "./locations";
 export * from "./orders";
 export * from "./pages";
+export * from "./policies";
 export * from "./price_rule_discounts";
 export * from "./price_rules";
 export * from "./product_variants";
