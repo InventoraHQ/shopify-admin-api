@@ -7,7 +7,7 @@ export interface Redirect extends ShopifyObject {
     /**
      * The unique numeric identifier for the redirect.
      */
-    id?: number;
+    id: number;
 
     /**
      * The "before" path to be redirected. When the user this path, s/he will be redirected to the path specified by target.

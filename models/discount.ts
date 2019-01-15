@@ -8,7 +8,7 @@ export interface Discount extends ShopifyObject {
     /**
      * The unique numeric identifier for the discount.
      */
-    id?: number;
+    id: number;
 
     /**
      * Specify how the discount's value will be applied to the order. Valid values are:

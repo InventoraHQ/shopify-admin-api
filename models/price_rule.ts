@@ -6,6 +6,11 @@ import { ShopifyObject } from "./base";
 export interface PriceRule extends ShopifyObject {
 
     /** 
+     * The id of the price rule
+     */
+    id: number
+
+    /** 
      * The title of the price rule.
      */
     title: string
@@ -111,11 +116,6 @@ export interface PriceRule extends ShopifyObject {
      * The date and time when the price rule ends.Must be after starts_at.
      */
     ends_at?: string
-
-    /** 
-     * The id of the price rule
-     */
-    id?: number
 
     /** 
      * By default, this auto- generated property is the date and time when the price rule was created in Shopify, in ISO 8601 format.

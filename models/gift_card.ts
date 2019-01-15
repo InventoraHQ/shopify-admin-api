@@ -8,7 +8,7 @@ export interface GiftCard extends ShopifyObject {
     /**
      * The unique numeric identifier for the Gift Card.
      */
-    id?: number;
+    id: number;
 
     /**
      * A unique numeric identifier of the application that issued the gift card (if it was issued by an application).
