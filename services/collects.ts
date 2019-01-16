@@ -23,7 +23,7 @@ export class Collects extends BaseService {
      * @param options Options for filtering the result.
      */
     public count(id: number, options?: Options.CollectCountOptions) {
-      return this.createRequest<Collect>("GET", `${id}.json`, "collect", options);
+      return this.createRequest<Collect>("GET", `${id}.json`, "count", options);
     }
 
     /**
@@ -36,7 +36,7 @@ export class Collects extends BaseService {
     }
 
     /**
-     * Retrieves a list of up to 250 checkouts.
+     * Retrieves a list of up to 250 collects.
      * @param options Options for pagination and filtering the result.
      */
     public list(options?: Options.CollectListOptions) {

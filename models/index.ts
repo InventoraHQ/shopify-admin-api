@@ -11,6 +11,7 @@ export * from "./charge";
 export * from "./checkout";
 export * from "./client_details";
 export * from "./collect";
+export * from "./comment";
 export * from "./customer";
 export * from "./discount";
 export * from "./discount_allocation";
