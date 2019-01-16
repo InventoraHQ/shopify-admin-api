@@ -57,12 +57,14 @@ export interface BasicListOptions {
     page?: number;
 }
 
-export interface ListOptions extends BasicListOptions {
+export interface SinceIdOptions {
     /**
      * Restricts results to those created after the given id.
      */
     since_id?: number;
 }
+
+export interface ListOptions extends BasicListOptions, SinceIdOptions {}
 
 export interface PublishedOptions {
     /**
