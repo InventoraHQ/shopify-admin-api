@@ -10,6 +10,7 @@ export * from "./carrier_service";
 export * from "./charge";
 export * from "./checkout";
 export * from "./client_details";
+export * from "./collect";
 export * from "./customer";
 export * from "./discount";
 export * from "./discount_allocation";
