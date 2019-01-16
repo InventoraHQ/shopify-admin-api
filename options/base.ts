@@ -7,7 +7,19 @@ export interface FieldOptions {
     fields?: string;
 }
 
-export interface DateOptions {
+export interface UpdatedAtOptions {
+    /**
+     * Retrieve only objects that were created after the given date and time (format: 2014-04-25T16:15:47-04:00).
+     */
+    updated_at_min?: string;
+
+    /**
+     * Retrieve only objects that were created before the given date and time (format: 2014-04-25T16:15:47-04:00).
+     */
+    updated_at_max?: string;    
+}
+
+export interface CreatedAtOptions {
     /**
      * Retrieve only objects that were created after the given date and time (format: 2014-04-25T16:15:47-04:00).
      */
@@ -17,17 +29,9 @@ export interface DateOptions {
      * Retrieve only objects that were created before the given date and time (format: 2014-04-25T16:15:47-04:00).
      */
     created_at_max?: string;
-
-    /**
-     * Retrieve only objects that were created after the given date and time (format: 2014-04-25T16:15:47-04:00).
-     */
-    updated_at_min?: string;
-
-    /**
-     * Retrieve only objects that were created before the given date and time (format: 2014-04-25T16:15:47-04:00).
-     */
-    updated_at_max?: string;
 }
+
+export interface DateOptions extends UpdatedAtOptions, CreatedAtOptions {};
 
 export interface ProcessedOptions {
     /**

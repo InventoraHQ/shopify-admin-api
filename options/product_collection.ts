@@ -1,6 +1,6 @@
-import { ListOptions, PublishedOptions, FieldOptions, DateOptions } from "./base";
+import { ListOptions, PublishedOptions, FieldOptions, UpdatedAtOptions } from "./base";
 
-export interface CollectionListOptions extends ListOptions, FieldOptions, PublishedOptions, DateOptions, PublishedOptions {
+export interface CollectionListOptions extends ListOptions, FieldOptions, PublishedOptions, UpdatedAtOptions {
     ids?: string;
     title?: string;
     product_id?: number;
@@ -8,7 +8,7 @@ export interface CollectionListOptions extends ListOptions, FieldOptions, Publis
     since_id?: number;
 }
 
-export interface CollectionCountOptions extends DateOptions, PublishedOptions {
+export interface CollectionCountOptions extends UpdatedAtOptions, PublishedOptions {
     title?: string;
     product_id?: number
 }
