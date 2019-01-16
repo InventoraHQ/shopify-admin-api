@@ -12,7 +12,7 @@ export class SmartCollections extends BaseService {
      * @param options Options for filtering the results.
      * @see https://help.shopify.com/api/reference/smartcollection#count
      */
-    public count(options?: { title?: string, product_id?: number } & Options.DateOptions & Options.PublishedOptions) {
+    public count(options?: Options.CollectionCountOptions) {
         return this.createRequest<number>("GET", "count.json", "count", options);
     }
 
@@ -29,7 +29,7 @@ export class SmartCollections extends BaseService {
      * @param id The collection's id.
      * @param options Options for filtering the results.
      */
-    public get(id: number, options?: Options.FieldOptions) {
+    public get(id: number, options?: Options.CollectionGetOptions) {
         return this.createRequest<SmartCollection>("GET", `${id}.json`, "smart_collection", options);
     }
 
