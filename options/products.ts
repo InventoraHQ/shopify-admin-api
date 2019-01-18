@@ -35,3 +35,5 @@ export interface ProductListOptions extends ProductBaseOptions, ListOptions, Dat
 
     collection_id?: string
 }
+
+export interface ProductGetOptions extends FieldOptions {}

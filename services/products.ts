@@ -29,7 +29,7 @@ export class Products extends BaseService {
      * @param id The Product's id.
      * @param options Options for filtering the results.
      */
-    public get(id: number, options?: Options.FieldOptions) {
+    public get(id: number, options?: Options.ProductGetOptions) {
         return this.createRequest<Product>("GET", `${id}.json`, "product", options);
     }
 

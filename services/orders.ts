@@ -20,7 +20,7 @@ export class Orders extends BaseService {
      * @param options Options for filtering the results.
      */
     public list(options?: Options.OrderListOptions) {
-        return this.createRequest<Order[]>("GET", ".json", "orders", options);
+        return this.createRequest<Partial<Order>[]>("GET", ".json", "orders", options);
     }
 
     /**
@@ -29,7 +29,7 @@ export class Orders extends BaseService {
      * @param options Options for filtering the results.
      */
     public listForCustomer(customerId: number, options?: Options.OrderListOptions) {
-        return this.createRequest<Order[]>("GET", ".json", "orders", Object.assign({ customer_id: customerId }, options));
+        return this.createRequest<Partial<Order>[]>("GET", ".json", "orders", Object.assign({ customer_id: customerId }, options));
     }
 
     /**
@@ -37,8 +37,8 @@ export class Orders extends BaseService {
      * @param orderId The order's id.
      * @param options Options for filtering the results.
      */
-    public get(orderId: number, options?: Options.FieldOptions) {
-        return this.createRequest<Order>("GET", `${orderId}.json`, "order", options);
+    public get(orderId: number, options?: Options.OrderGetOptions) {
+        return this.createRequest<Partial<Order>>("GET", `${orderId}.json`, "order", options);
     }
 
     /**

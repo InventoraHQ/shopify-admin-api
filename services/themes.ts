@@ -23,8 +23,8 @@ export class Themes extends BaseService {
      * @param id Id of the theme to retrieve.
      * @param options Options for filtering the result.
      */
-    public get(id: number, options?: Options.FieldOptions) {
-        return this.createRequest<Theme>("GET", `${id}.json`, "", options);
+    public get(id: number, options?: Options.ThemeGetOptions) {
+        return this.createRequest<Partial<Theme>>("GET", `${id}.json`, "", options);
     }
 
     /**
@@ -32,7 +32,7 @@ export class Themes extends BaseService {
      * @param id Id of the themes being updated.
      * @param themes The updated theme.
      */
-    public update(id: number, themes: Theme) {
+    public update(id: number, themes: Partial<Theme>) {
         return this.createRequest<Theme>("PUT", `${id}.json`, "themes", { themes });
     }
 
@@ -40,8 +40,8 @@ export class Themes extends BaseService {
      * Gets a list of all themes on the shop.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.FieldOptions) {
-        return this.createRequest<Theme[]>("GET", `.json`, "themes", options);
+    public list(options?: Options.ThemeListOptions) {
+        return this.createRequest<Partial<Theme>[]>("GET", `.json`, "themes", options);
     }
 
     /**

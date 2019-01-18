@@ -23,8 +23,8 @@ export class Pages extends BaseService {
      * @param id Id of the page to retrieve.
      * @param options Options for filtering the result.
      */
-    public get(id: number, options?: Options.FieldOptions) {
-        return this.createRequest<Page>("GET", `${id}.json`, "page", options);
+    public get(id: number, options?: Options.PageGetOptions) {
+        return this.createRequest<Partial<Page>>("GET", `${id}.json`, "page", options);
     }
 
     /**
@@ -40,8 +40,8 @@ export class Pages extends BaseService {
      * Retrieve a list of all pages.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.FieldOptions & Options.PageListOptions) {
-        return this.createRequest<Page[]>("GET", `.json`, "pages", options);
+    public list(options?: Options.PageListOptions) {
+        return this.createRequest<Partial<Page>[]>("GET", `.json`, "pages", options);
     }
 
     /**

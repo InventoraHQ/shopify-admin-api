@@ -9,6 +9,8 @@ export interface PageBaseOptions {
 
 export interface PageCountOptions extends PageBaseOptions, DateOptions, PublishedOptions {}
 
+export interface PageGetOptions extends FieldOptions {}
+
 export interface PageListOptions extends PageBaseOptions, ListOptions, DateOptions, PublishedOptions, FieldOptions {
   /**
    * Retrieve a page with a given handle.

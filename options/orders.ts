@@ -20,6 +20,8 @@ export interface OrderListOptions extends FieldOptions, DateOptions, ProcessedOp
     ids?: string;
 }
 
+export interface OrderGetOptions extends FieldOptions {}
+
 export interface OrderCreateOptions {
     send_receipt?: boolean;
 
