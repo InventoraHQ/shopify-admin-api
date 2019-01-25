@@ -27,13 +27,30 @@ export interface ProductListOptions extends ProductBaseOptions, ListOptions, Dat
      */
     ids?: string;
 
-    title?: string
+    /**
+     * Filter results by product title.
+     */
+    title?: string;
 
-    vendor?: string
+    /**
+     * Filter results by product vendor.
+     */
+    vendor?: string;
 
-    product_type?: string
+    /**
+     * Filter results by product handle.
+     */
+    handle?: string;
 
-    collection_id?: string
+    /**
+     * Filter results by product type.
+     */
+    product_type?: string;
+
+    /**
+     * Filter results by product collection ID.
+     */
+    collection_id?: string;
 }
 
 export interface ProductGetOptions extends FieldOptions {}
