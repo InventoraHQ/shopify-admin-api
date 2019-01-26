@@ -34,7 +34,7 @@ export class CustomCollections extends BaseService {
     }
 
     /**
-     * Creates an collection.
+     * Creates a custom collection.
      * @param collection The collection being created.
      * @param options Options for creating the collection.
      */
@@ -43,7 +43,7 @@ export class CustomCollections extends BaseService {
     }
 
     /**
-     * Updates an collection with the given id.
+     * Updates a custom collection with the given id.
      * @param id The collection's id.
      * @param collection The updated collection.
      */
@@ -52,7 +52,7 @@ export class CustomCollections extends BaseService {
     }
 
     /**
-     * Deletes an collection with the given id.
+     * Deletes a custom collection with the given id.
      * @param id The collection's id.
      */
     public delete(id: number) {
