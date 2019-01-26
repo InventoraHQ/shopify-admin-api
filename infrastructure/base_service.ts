@@ -116,7 +116,7 @@ export class BaseService {
          *  1. the queue can become arbitrary large, with longer and longer wait times and
          *  eventually memory problems, if an app just keeps on adding request after request.
          *
-         *  2. There is still no guarantee that a `too many requests` will not happen if a big number of requests is added at once.
+         *  2. There is still no guarantee that a `too many requests` (code 429) will not happen if a big number of requests is added at once.
          */
         const result = await BaseService.apiInfo[this.shopDomain].requestQueue.add(async () => {
             // Check that we don't hit call limit
