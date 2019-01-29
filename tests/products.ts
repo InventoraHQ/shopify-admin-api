@@ -158,7 +158,7 @@ export class ProductTests {
     public async Test8() {
         const created = await this.create();
         const newTitle = "Product Title Updated by Shopify Prime";
-        const updated = await this.service.update(created.id, { ...created, title: newTitle });
+        const updated = await this.service.update(created.id, { ...created as Prime.Models.ProductUpdateCreate, title: newTitle });
         
         Expect(updated.id).toEqual(created.id);
         Expect(updated.title).toEqual(newTitle);

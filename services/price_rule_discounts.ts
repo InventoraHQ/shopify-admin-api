@@ -19,7 +19,7 @@ export class PriceRuleDiscounts extends BaseService {
      * Returns a list of discount codes belonging to a specified price rule.
      * @param options Options for filtering the results.
      */
-    public list(priceRuleId: number, options?: Options.ListOptions) {
+    public list(priceRuleId: number, options?: Options.PriceRuleDiscountListOptions) {
         return this.createRequest<PriceRuleDiscountCode[]>("GET", this.getPath(priceRuleId, ".json"), "discount_codes", options);
     }
 
@@ -27,7 +27,7 @@ export class PriceRuleDiscounts extends BaseService {
      * Creates a new discount code for a given price rule.
      * Note: Currently, you can only create a single discount code per price rule.
      */
-    public create(priceRuleId: number, discount: PriceRuleDiscountCode) {
+    public create(priceRuleId: number, discount: Partial<PriceRuleDiscountCode>) {
         return this.createRequest<PriceRuleDiscountCode>("POST", this.getPath(priceRuleId, ".json"), "discount_code", { discount_code: discount });
     }
 
@@ -53,7 +53,7 @@ export class PriceRuleDiscounts extends BaseService {
     /**
      * Updates a single discount code for a given price rule.
      */
-    public update(priceRuleId: number, id: number, discount: PriceRuleDiscountCode) {
+    public update(priceRuleId: number, id: number, discount: Partial<PriceRuleDiscountCode>) {
         return this.createRequest<PriceRuleDiscountCode>("PUT", this.getPath(priceRuleId, `${id}.json`), "discount_code", { discount_code: discount });
     }
 

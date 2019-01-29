@@ -1,4 +1,4 @@
-import * as joinPaths from 'url-join';
+const joinPaths = require('url-join');
 import fetch from 'node-fetch';
 import ShopifyError from './shopify_error';
 import uri = require("jsuri");

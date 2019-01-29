@@ -21,7 +21,7 @@ export class Discounts extends BaseService {
      * Gets a list of up to 250 of the shop's discounts.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.ListOptions) {
+    public list(options?: Options.DiscountListOptions) {
         return this.createRequest<Discount[]>("GET", ".json", "discounts", options);
     }
 

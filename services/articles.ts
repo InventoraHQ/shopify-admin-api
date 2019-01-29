@@ -25,7 +25,7 @@ export class Articles extends BaseService {
      * @param articleId Id of the article to update.
      * @param article The updated article.
      */
-    public update(blogId: number, articleId: number, article: Article) {
+    public update(blogId: number, articleId: number, article: Partial<Article>) {
         return this.createRequest<Article>("PUT", `blogs/${blogId}/articles/${articleId}.json`, "article", { article });
     }
 

@@ -14,7 +14,7 @@ export class ScriptTags extends BaseService {
      * Gets a count of all of the shop's script tags.
      * @param options Options for filtering the results.
      */
-    public count(options?: Options.ScriptTagOptions) {
+    public count(options?: Options.ScriptTagCountOptions) {
         return this.createRequest<number>("GET", "count.json", "count", options);
     }
 
@@ -22,7 +22,7 @@ export class ScriptTags extends BaseService {
      * Gets a list of up to 250 of the shop's script tags.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.ScriptTagOptions & Options.ListOptions & Options.DateOptions & Options.FieldOptions) {
+    public list(options?: Options.ScriptTagListOptions) {
         return this.createRequest<ScriptTag[]>("GET", ".json", "script_tags", options);
     }
 
@@ -30,14 +30,14 @@ export class ScriptTags extends BaseService {
      * Retrieves the script tag with the given id.
      * @param options Options for filtering the results.
      */
-    public get(id: number, options?: Options.FieldOptions) {
+    public get(id: number, options?: Options.ScriptTagGetOptions) {
         return this.createRequest<ScriptTag>("GET", `${id}.json`, "script_tag", options);
     }
 
     /**
      * Creates a new script tag.
      */
-    public create(tag: ScriptTag) {
+    public create(tag: Partial<ScriptTag>) {
         return this.createRequest<ScriptTag>("POST", ".json", "script_tag", { script_tag: tag });
     }
 
@@ -45,7 +45,7 @@ export class ScriptTags extends BaseService {
      * Updates the script tag with the given id.
      * @param tag The updated script tag.
      */
-    public update(id: number, tag: ScriptTag) {
+    public update(id: number, tag: Partial<ScriptTag>) {
         return this.createRequest<ScriptTag>("PUT", `${id}.json`, "script_tag", { script_tag: tag });
     }
 

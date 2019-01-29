@@ -64,7 +64,7 @@ export interface LineItem extends ShopifyObject {
     /**
      *  The price of the item before discounts have been applied.
      */
-    price: string;
+    price: string | number;
 
     /**
      * TODO: what does this mean?

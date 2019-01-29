@@ -14,7 +14,7 @@ export class Webhooks extends BaseService {
      * Gets a count of all of the shop's webhooks.
      * @param options Options for filtering the results.
      */
-    public count(options?: Options.WebhookOptions) {
+    public count(options?: Options.WebhookCountOptions) {
         return this.createRequest<number>("GET", "count.json", "count", options);
     }
 
@@ -22,7 +22,7 @@ export class Webhooks extends BaseService {
      * Gets a list of up to 250 of the shop's webhooks.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.WebhookOptions & Options.ListOptions & Options.DateOptions & Options.FieldOptions) {
+    public list(options?: Options.WebhookListOptions) {
         return this.createRequest<Webhook[]>("GET", ".json", "webhooks", options);
     }
 
@@ -30,7 +30,7 @@ export class Webhooks extends BaseService {
      * Retrieves the webhook with the given id.
      * @param options Options for filtering the results.
      */
-    public get(id: number, options?: Options.FieldOptions) {
+    public get(id: number, options?: Options.WebhookGetOptions) {
         return this.createRequest<Webhook>("GET", `${id}.json`, "webhook", options);
     }
 
@@ -45,7 +45,7 @@ export class Webhooks extends BaseService {
      * Updates the webhook with the given id.
      * @param webhook The updated webhook.
      */
-    public update(id: number, webhook: Webhook) {
+    public update(id: number, webhook: Partial<Webhook>) {
         return this.createRequest<Webhook>("PUT", `${id}.json`, "webhook", { webhook });
     }
 

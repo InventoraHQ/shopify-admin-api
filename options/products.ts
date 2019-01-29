@@ -29,6 +29,7 @@ export interface ProductListOptions extends ProductBaseOptions, ListOptions, Dat
 
     /**
      * Filter results by product title.
+     * Please note: You can also search for a substring of titles (Case insensitivity)
      */
     title?: string;
 

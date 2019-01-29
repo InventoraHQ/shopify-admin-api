@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Order, Transaction } from '../models';
+import { Order, OrderCreate,Transaction } from '../models';
 
 export class Orders extends BaseService {
     constructor(shopDomain: string, accessToken: string) {
@@ -46,7 +46,7 @@ export class Orders extends BaseService {
      * @param order The order being created.
      * @param options Options for creating the order.
      */
-    public create(order: Partial<Order>, transactions?: Transaction[], options?: Options.OrderCreateOptions) {
+    public create(order: OrderCreate, transactions?: Transaction[], options?: Options.OrderCreateOptions) {
         return this.createRequest<Order>("POST", ".json", "order", { order: Object.assign({}, order, options, { transactions }) });
     }
 
@@ -55,7 +55,7 @@ export class Orders extends BaseService {
      * @param id The order's id.
      * @param order The updated order.
      */
-    public update(id: number, order: Order) {
+    public update(id: number, order: Partial<OrderCreate>) {
         return this.createRequest<Order>("PUT", `${id}.json`, "order", { order });
     }
 

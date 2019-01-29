@@ -1,6 +1,7 @@
 import { WebhookTopic } from "../enums/webhook_topic";
+import * as Options from '../options';
 
-export interface WebhookOptions {
+export interface WebhookBaseOptions {
     /**
      * Retrieve only webhooks that possess the URI where the webhook sends the POST request when the event occurs.
      */
@@ -11,3 +12,7 @@ export interface WebhookOptions {
      */
     topic?: WebhookTopic;
 }
+
+export interface WebhookListOptions extends WebhookBaseOptions, Options.ListOptions, Options.DateOptions, Options.FieldOptions {}
+export interface WebhookCountOptions extends WebhookBaseOptions {}
+export interface WebhookGetOptions extends Options.FieldOptions {}

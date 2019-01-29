@@ -7,4 +7,6 @@ export interface TransactionBaseOptions extends FieldOptions{
   in_shop_currency?: boolean;
 }
 
-export interface TransactionListOptions extends TransactionBaseOptions, ListOptions{}
+export interface TransactionListOptions extends TransactionBaseOptions, ListOptions {}
+export interface TransactionGetOptions extends TransactionBaseOptions {}
+export interface TransactionCountOptions extends TransactionBaseOptions {}

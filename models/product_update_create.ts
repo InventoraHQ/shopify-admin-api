@@ -52,7 +52,7 @@ export interface ProductUpdateCreate extends Partial<ShopifyObject> {
    * The date and time when the product was published. The API returns this value in ISO 8601 format. 
    * Set to NULL to unpublish a product
    */ 
-  published_at: string | null;
+  published_at?: string | null;
 
   /**
    * A categorization that a product can be tagged with, commonly used for filtering and searching.

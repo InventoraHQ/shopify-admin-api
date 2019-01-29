@@ -29,6 +29,7 @@ export * from "./location";
 export * from "./meta_field_update_create";
 export * from "./meta_field";
 export * from "./note_attribute";
+export * from "./order_create";
 export * from "./order";
 export * from "./page";
 export * from "./payment_details";
