@@ -13,7 +13,7 @@ import { Config, Expect } from './test_utils';
 @TestFixture("Prime.Auth.buildAuthorizationUrl tests")
 export class BuildAuthorizationUrlTests {
     @AsyncTest("should build a valid authorization url")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test1() {
         const url = await Prime.Auth.buildAuthorizationUrl(["read_orders", "write_orders"], Config.shopDomain, Config.apiKey);
 
@@ -25,7 +25,7 @@ export class BuildAuthorizationUrlTests {
     }
 
     @AsyncTest("should build an authorization url with a redirect url")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test2() {
         const redirect = "https://example.com/my/path?query=string";
         const url = await Prime.Auth.buildAuthorizationUrl(["read_orders", "write_orders"], Config.shopDomain, Config.apiKey, redirect);
@@ -39,7 +39,7 @@ export class BuildAuthorizationUrlTests {
     }
 
     @AsyncTest("should build an authorization url with a state")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test3() {
         const state = "1780650a-2610-46ca-986a-830f4dcb8085";
         const url = await Prime.Auth.buildAuthorizationUrl(["read_orders", "write_orders"], Config.shopDomain, Config.apiKey, undefined, state);
@@ -53,7 +53,7 @@ export class BuildAuthorizationUrlTests {
     }
 
     @AsyncTest("should build an authorization url with a redirect url and state")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test4() {
         const redirect = "https://example.com/my/path?query=string";
         const state = "1780650a-2610-46ca-986a-830f4dcb8085";
@@ -69,7 +69,7 @@ export class BuildAuthorizationUrlTests {
     }
 
     @AsyncTest("should build an authorization url with grant permissions")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test5() {
         const redirect = "https://example.com/my/path?query=string";
         const state = "1780650a-2610-46ca-986a-830f4dcb8085";
@@ -89,7 +89,7 @@ export class BuildAuthorizationUrlTests {
 @TestFixture("Prime.Auth.isValidShopifyDomain tests")
 export class IsValidShopifyDomainTests {
     @AsyncTest("should return true for a valid domain")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test1() {
         const isValid = await Prime.Auth.isValidShopifyDomain(Config.shopDomain);
 
@@ -97,7 +97,7 @@ export class IsValidShopifyDomainTests {
     }
 
     @AsyncTest("should return false for an invalid domain")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test2() {
         const isValid = await Prime.Auth.isValidShopifyDomain("example.com");
 
@@ -108,7 +108,7 @@ export class IsValidShopifyDomainTests {
 @TestFixture("Prime.Auth.isAuthenticProxyRequest tests")
 export class IsAuthenticProxyRequestTests {
     @AsyncTest("should return true for a valid request")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test1() {
         const qs = {
             shop: "stages-test-shop-2.myshopify.com",
@@ -122,7 +122,7 @@ export class IsAuthenticProxyRequestTests {
     }
 
     @AsyncTest("should return false for an invalid request")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test2() {
         const result = await Prime.Auth.isAuthenticProxyRequest({ signature: "abcd" }, Config.secretKey);
 
@@ -133,7 +133,7 @@ export class IsAuthenticProxyRequestTests {
 @TestFixture("Prime.Auth.isAuthenticRequest tests")
 export class IsAuthenticRequestTests {
     @AsyncTest("should return true for a valid request")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test1() {
         const qs = {
             signature: "1f013145b16c437fa695f7f448ca79ce",
@@ -147,7 +147,7 @@ export class IsAuthenticRequestTests {
     }
 
     @AsyncTest("should return false for an invalid request")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test2() {
         const qs = {
             hmac: "abcd"
@@ -164,7 +164,7 @@ export class IsAuthenticWebhookTests {
     private header = "EXRIrLEalEssMKrvONz+5mrVF3LmAqkhrquCaBV+vjo=";
 
     @AsyncTest("should return true for a valid request with a header string")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test1() {
         const result = await Prime.Auth.isAuthenticWebhook(this.header, this.body, Config.secretKey);
 
@@ -172,7 +172,7 @@ export class IsAuthenticWebhookTests {
     }
 
     @AsyncTest('should return true for a valid request with a header object')
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test2() {
         const result = await Prime.Auth.isAuthenticWebhook({ "X-Shopify-Hmac-SHA256": this.header }, this.body, Config.secretKey);
 
@@ -180,7 +180,7 @@ export class IsAuthenticWebhookTests {
     }
 
     @AsyncTest('should return true for a valid request with a header object and lowercase header name')
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test3() {
         const result = await Prime.Auth.isAuthenticWebhook({ "x-shopify-hmac-sha256": this.header }, this.body, Config.secretKey);
 
@@ -188,7 +188,7 @@ export class IsAuthenticWebhookTests {
     }
 
     @AsyncTest("should return false for an invalid request")
-    @Timeout(5000)
+    @Timeout(10000)
     public async Test4() {
         const result = await Prime.Auth.isAuthenticWebhook({}, this.body, Config.secretKey);
 
