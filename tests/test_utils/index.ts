@@ -1,6 +1,4 @@
-import { IgnoreTests } from 'alsatian';
-import { Matcher } from 'alsatian/core';
-import { MatchError } from 'alsatian/core/alsatian-core';
+import { IgnoreTests, Matcher, MatchError } from 'alsatian';
 
 declare var process: { env: any; };
 
@@ -47,12 +45,50 @@ export function createGuid() {
 }
 
 @IgnoreTests("Not a test fixture")
-export class MatcherExtension extends Matcher {
+export class MatcherExtension extends Matcher<any> {
     constructor(value) {
         super(value);
     }
 
-    readonly not: MatcherExtension;
+    // readonly not: MatcherExtension;
+
+    /**
+     * Checks that a value conforms to a regular expression
+     * @param regex - the regular expression that the actual value should match
+     * @see https://github.com/alsatian-test/alsatian/blob/2.0.x/core/matchers/string-matcher.ts
+     */
+    public toMatch(regex: RegExp) {
+        if (regex === null || regex === undefined) {
+        throw new TypeError("toMatch regular expression must not be null or undefined.");
+        }
+
+        if (typeof this.actualValue !== "string") {
+        throw new TypeError("toMatch must only be used to match on strings.");
+        }
+
+        if (!regex.test(this.actualValue) === this.shouldMatch) {
+        throw new MatchError(this.actualValue, regex, this.shouldMatch);
+        }
+    }
+
+    /**
+     * Checks that a string contains another string or an array contains a specific item
+     * @param expectedContent - the string or array item that the value should contain
+     * @see https://github.com/alsatian-test/alsatian/blob/2.0.x/core/matchers/container-matcher.ts
+     */
+    public toContain(expectedContent: string) {
+        if (this.actualValue instanceof Array === false && typeof this.actualValue !== "string") {
+        throw new TypeError("toContain must only be used to check whether strings or arrays contain given contents.");
+        }
+
+        if (typeof this.actualValue === "string" && typeof expectedContent !== "string") {
+        throw new TypeError("toContain cannot check whether a string contains a non string value.");
+        }
+
+        if ((this.actualValue as any).indexOf(expectedContent) === -1 === this.shouldMatch) {
+        throw new MatchError(this.actualValue, expectedContent, this.shouldMatch);
+        }
+    }
 
     toBeType(expectedType: string) {
         const actualType = typeof(this.actualValue);
@@ -80,6 +116,10 @@ export class MatcherExtension extends Matcher {
         }
     }
 
+    toBeGreaterThan(value: number) {
+        return this.toBeGreaterThanOrEqualTo(value - 1);
+    }
+
     toBeGreaterThanOrEqualTo(value: number) {
         const isGte = this.actualValue >= value;
         
@@ -90,6 +130,10 @@ export class MatcherExtension extends Matcher {
         if (! this.shouldMatch && isGte) {
             throw new MatchError(`expected value to not be greater than or equal to ${value}, but it was.`, `not greater than or equal to ${value}`, this.actualValue);
         }
+    }
+
+    toBeLesserThan(value: number) {
+        return this.toBeLesserThanOrEqualTo(value + 1);
     }
 
     toBeLesserThanOrEqualTo(value: number) {
@@ -121,11 +165,11 @@ export class MatcherExtension extends Matcher {
             throw new MatchError(`Custom .itemsToPassValidator function is not useable with .not.`);
         }
 
-        const value: any[] = this.actualValue;
+        const values: any [] = this.actualValue;
         let error: MatchError;
 
         try {
-            value.forEach(item => validator(item));
+            values.forEach(item => validator(item));
         } catch (_e) {
             error = _e;
         }
