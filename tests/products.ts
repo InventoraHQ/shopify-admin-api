@@ -9,6 +9,7 @@ import {
     Timeout
     } from 'alsatian';
 import { Config, createGuid, Expect } from './test_utils';
+import { createProducts, updateProducts } from './data';
 
 @TestFixture("Product Tests")
 export class ProductTests {
@@ -162,5 +163,22 @@ export class ProductTests {
         
         Expect(updated.id).toEqual(created.id);
         Expect(updated.title).toEqual(newTitle);
+    }
+
+    @AsyncTest("should create all products from test data")
+    @Timeout(5000)
+    public async Test9() {
+        console.debug('test 9');
+        for (const createProduct of createProducts) {
+            let error;
+            try {
+                const product = await this.service.create(createProduct.product);
+                this.created.push(product);
+            } catch (e) {
+                inspect(`Error on "${createProduct.info}"`, e);
+                error = e;
+            }
+            Expect(error).toBeNullOrUndefined();
+        }
     }
 }
