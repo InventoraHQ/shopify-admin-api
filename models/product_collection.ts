@@ -73,7 +73,7 @@ export interface CustomCollection extends ProductCollection {
      * product_id - Required when adding a new item
      * id - Required when shifting the position of a product that was previously added to the collection
      */
-    collects: {
+    collects?: {
         product_id?: number
         id?: number,
         position?: number

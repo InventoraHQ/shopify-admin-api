@@ -22,8 +22,8 @@ export class Collects extends BaseService {
      * @param id The id of the collect to get.
      * @param options Options for filtering the result.
      */
-    public count(id: number, options?: Options.CollectCountOptions) {
-      return this.createRequest<Collect>("GET", `${id}.json`, "count", options);
+    public count(options?: Options.CollectCountOptions) {
+      return this.createRequest<number>("GET", "count.json", "count", options);
     }
 
     /**

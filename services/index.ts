@@ -7,6 +7,7 @@ export * from "./carrier_services";
 export * from "./charges";
 export * from "./checkouts";
 export * from "./comments";
+export * from "./collects";
 export * from "./custom_collections";
 export * from "./discounts";
 export * from "./draft_orders";
