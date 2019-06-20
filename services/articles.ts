@@ -35,7 +35,7 @@ export class Articles extends BaseService {
      * @param articleId Id of the article being retrieved.
      * @param options Options for filtering the result.
      */
-    public get(blogId: number, articleId: number, options?: Options.FieldOptions) {
+    public get(blogId: number, articleId: number, options?: Options.ArticleGetOptions) {
         return this.createRequest<Article>("GET", `blogs/${blogId}/articles/${articleId}.json`, "article", options);
     }
 
@@ -44,7 +44,7 @@ export class Articles extends BaseService {
      * @param blogId Id of the blog that the articles belong to.
      * @param options Options for filtering the results.
      */
-    public list(blogId: number, options?: Options.FieldOptions & Options.DateOptions & Options.ListOptions & Options.PublishedOptions & Options.ArticleListOptions) {
+    public list(blogId: number, options?: Options.ArticleListOptions) {
         return this.createRequest<Article[]>("GET", `blogs/${blogId}/articles.json`, "articles", options);
     }
 
@@ -53,7 +53,7 @@ export class Articles extends BaseService {
      * @param blogId Id of the blog that the articles belong to.
      * @param options Options for filtering the results.
      */
-    public count(blogId: number, options?: Options.DateOptions & Options.PublishedOptions) {
+    public count(blogId: number, options?: Options.ArticleCountOptions) {
         return this.createRequest<number>("GET", `blogs/${blogId}/articles/count.json`, "count", options);
     }
 
@@ -69,8 +69,8 @@ export class Articles extends BaseService {
     /**
      * Gets a list of all article authors.
      */
-    public listAuthors() {
-        return this.createRequest<string[]>("GET", `articles/authors.json`, "authors");
+    public listAuthors(options?: Options.ArticleAuthorListOptions) {
+        return this.createRequest<string[]>("GET", `articles/authors.json`, "authors", options);
     }
 
     /**
