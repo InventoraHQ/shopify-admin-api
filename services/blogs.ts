@@ -23,7 +23,7 @@ export class Blogs extends BaseService {
      * @param id Id of the blog to retrieve.
      * @param options Options for filtering the result.
      */
-    public get(id: number, options?: Options.FieldOptions) {
+    public get(id: number, options?: Options.BlogGetOptions) {
         return this.createRequest<Blog>("GET", `${id}.json`, "blog", options);
     }
 
@@ -40,14 +40,14 @@ export class Blogs extends BaseService {
      * Gets a list of all blogs on the shop.
      * @param options Options for filtering the results.
      */
-    public list(options?: Options.FieldOptions & Options.BlogListOptions) {
+    public list(options?: Options.BlogListOptions) {
         return this.createRequest<Blog[]>("GET", `.json`, "blogs", options);
     }
 
     /**
      * Gets a count of all blogs on the shop.
      */
-    public count() {
+    public count(options?: Options.BlogCountOptions) {
         return this.createRequest<number>("GET", "count.json", "count");
     }
 

@@ -1,11 +1,23 @@
-export interface BlogListOptions {
-    /**
-     * Filter by blog handle.
-     */
-    handle?: string;
+import { FieldOptions, ListOptions, SinceIdOptions } from './base';
 
-    /**
-     * Filter results to after the specified ID,
-     */
-    since_id?: number;
+export interface BlogBaseOptions {}
+
+/**
+ * Get a count of all blogs.
+ */
+export interface BlogCountOptions extends BlogBaseOptions {}
+
+/**
+ * Get a single blog by its ID.
+ */
+export interface BlogGetOptions extends FieldOptions {}
+
+/**
+ * Get a list of all blogs.
+ */
+export interface BlogListOptions extends BlogBaseOptions, FieldOptions, SinceIdOptions {
+  /**
+   * Retrieve a page with a given handle.
+   */
+  handle?: string;
 }

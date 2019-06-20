@@ -19,12 +19,12 @@ export interface Blog extends ShopifyObject {
      * Feedburner is a web feed management provider and can be enabled to provide custom RSS feeds for Shopify bloggers. This property will default to blank or null unless feedburner is enabled through the shop admin.
      * Shopify does not document the value type for this property.
      */
-    feedburner?: any;
+    feedburner?: any; // TODO
 
     /**
      * URL to the feedburner location for blogs that have enabled feedburner through their store admin.
      */
-    feedburner_url?: string;
+    feedburner_location?: string;
 
     /**
      * A human-friendly unique string for a blog automatically generated from its title. This handle is used by the Liquid templating language to refer to the blog.
