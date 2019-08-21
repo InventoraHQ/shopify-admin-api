@@ -1,6 +1,6 @@
 {
     "name": "shopify-prime",
-    "version": "2.13.0",
+    "version": "2.14.0",
     "description": "Shopify Prime is a NodeJS library built to help developers easily authenticate and make calls against the Shopify API. It was inspired by and borrows heavily from ShopifySharp.",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -70,6 +70,7 @@
         "test:blogs": "alsatian -T ./dist/tests/blogs.js | tap-spec",
         "test:charges": "alsatian -T ./dist/tests/charges.js | tap-spec",
         "test:custom_collections": "alsatian -T ./dist/tests/custom_collections.js | tap-spec",
+        "test:customers": "alsatian -T ./dist/tests/customers.js | tap-spec",
         "test:discounts": "alsatian -T ./dist/tests/discounts.js | tap-spec",
         "test:gift_cards": "alsatian -T ./dist/tests/gift_cards.js | tap-spec",
         "test:orders": "alsatian -T ./dist/tests/orders.js | tap-spec",

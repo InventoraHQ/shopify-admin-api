@@ -4,6 +4,7 @@ export * from "./collects";
 export * from "./comments";
 export * from "./discounts";
 export * from "./blogs";
+export * from "./customers";
 export * from "./gift_cards";
 export * from "./inventory_items";
 export * from "./inventory_levels";

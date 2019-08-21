@@ -9,6 +9,7 @@ export * from "./checkouts";
 export * from "./comments";
 export * from "./collects";
 export * from "./custom_collections";
+export * from "./customers";
 export * from "./discounts";
 export * from "./draft_orders";
 export * from "./fulfillments";

@@ -105,3 +105,16 @@ export interface Customer extends ShopifyObject {
      */
     verified_email: boolean;
 }
+
+export interface CustomerInvite {
+
+    to?: string;
+
+    from?: string;
+
+    bcc?: string[];
+
+    subject?: string;
+
+    custom_message?: string;
+}
