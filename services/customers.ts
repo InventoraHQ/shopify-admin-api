@@ -44,7 +44,7 @@ export class Customers extends BaseService {
      * @param customer The customer being created.
      * @param options Options for creating the customer.
      */
-    public create(customer: Customer) {
+    public create(customer: Partial<Customer>) {
         return this.createRequest<Customer>("POST", ".json", "customer", { customer: customer });
     }
 
@@ -53,7 +53,7 @@ export class Customers extends BaseService {
      * @param id The customer's id.
      * @param customer The updated customer.
      */
-    public update(id: number, customer: Customer) {
+    public update(id: number, customer: Partial<Customer>) {
         return this.createRequest<Customer>("PUT", `${id}.json`, "customer", { customer: customer });
     }
 

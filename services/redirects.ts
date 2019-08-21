@@ -45,7 +45,7 @@ export class Redirects extends BaseService {
      * Updates the redirect with the given id.
      * @param tag The updated redirect.
      */
-    public update(id: number, redirect: Redirect) {
+    public update(id: number, redirect: Partial<Redirect>) {
         return this.createRequest<Redirect>("PUT", `${id}.json`, "redirect", { redirect });
     }
 

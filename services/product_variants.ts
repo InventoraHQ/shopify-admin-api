@@ -41,7 +41,7 @@ export class ProductVariants extends BaseService {
      * @param id Id of the variant.
      * @param productVariant The updated variant.
      */
-    public update(id: number, variant: ProductVariant) {
+    public update(id: number, variant: Partial<ProductVariant>) {
         return this.createRequest<ProductVariant>("PUT", `variants/${id}.json`, "variant", { variant });
     }
 

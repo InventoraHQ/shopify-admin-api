@@ -47,7 +47,7 @@ export class CustomCollections extends BaseService {
      * @param id The collection's id.
      * @param collection The updated collection.
      */
-    public update(id: number, collection: CustomCollection) {
+    public update(id: number, collection: Partial<CustomCollection>) {
         return this.createRequest<CustomCollection>("PUT", `${id}.json`, "custom_collection", { custom_collection: collection });
     }
 

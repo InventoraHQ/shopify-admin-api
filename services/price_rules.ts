@@ -40,7 +40,7 @@ export class PriceRules extends BaseService {
      * Updates the Price Rule with the given id.
      * @param tag The updated Price Rule.
      */
-    public update(id: number, PriceRule: PriceRule) {
+    public update(id: number, PriceRule: Partial<PriceRule>) {
         return this.createRequest<PriceRule>("PUT", `${id}.json`, "price_rule", { price_rule: PriceRule });
     }
 

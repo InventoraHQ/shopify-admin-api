@@ -26,7 +26,7 @@ export class Assets extends BaseService {
      * @param id Id of the assets being updated.
      * @param assets The updated asset.
      */
-    public update(id: number, asset: Asset) {
+    public update(id: number, asset: Partial<Asset>) {
         return this.createRequest<Asset>("PUT", `${id}/assets.json`, "asset", { asset });
     }
 

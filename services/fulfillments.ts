@@ -29,7 +29,7 @@ export class Fulfillments extends BaseService {
      * @param fulfillmentId Id of the fulfillment to update.
      * @param fulfillment The updated fulfillment.
      */
-    public update(orderId: number, fulfillmentId: number, fulfillment: Fulfillment) {
+    public update(orderId: number, fulfillmentId: number, fulfillment: Partial<Fulfillment>) {
         return this.createRequest<Fulfillment>("PUT", this.getPath(orderId, ".json"), "fulfillment", { fulfillment });
     }
 

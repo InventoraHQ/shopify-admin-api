@@ -47,7 +47,7 @@ export class SmartCollections extends BaseService {
      * @param id The collection's id.
      * @param collection The updated collection.
      */
-    public update(id: number, collection: SmartCollection) {
+    public update(id: number, collection: Partial<SmartCollection>) {
         return this.createRequest<SmartCollection>("PUT", `${id}.json`, "smart_collection", { smart_collection: collection });
     }
 
