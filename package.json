@@ -10,9 +10,11 @@
     },
     "keywords": [
         "shopify",
-        "gearworks",
+        "shopify-api",
+        "typescript",
         "ecommerce",
-        "api"
+        "api",
+        "nodejs"
     ],
     "author": "Joshua Harms <joshua@nozzlegear.com>",
     "contributors": [
