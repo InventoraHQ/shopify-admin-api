@@ -23,7 +23,7 @@ export class ShopifyError extends Error {
         this.statusCode = response.status;
         this.statusText = response.statusText;
         this.apiRateLimitReached = this.statusCode === 429 /* Too Many Requests */;
-        this.message = `[Shopify Prime] ${this.statusCode} ${this.statusText}. `;
+        this.message = `[Shopify Admin API] ${this.statusCode} ${this.statusText}. `;
 
         // Errors can be any of the following: 
         // 1. { errors: "some error message"}

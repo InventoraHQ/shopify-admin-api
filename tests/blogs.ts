@@ -33,7 +33,7 @@ export class BlogTests {
 
     private async create(scheduleForDeletion = true) {
         const obj = await this.service.create({
-            title: "Shopify Prime Test Blog - " + Date.now(),
+            title: "Shopify Admin API Test Blog - " + Date.now(),
             commentable: "moderate"
         });
 
@@ -50,7 +50,7 @@ export class BlogTests {
         const blog = await this.create();
 
         Expect(blog).toBeType("object");
-        Expect(blog.title).toContain("Shopify Prime Test Blog - ");
+        Expect(blog.title).toContain("Shopify Admin API Test Blog - ");
         Expect(blog.commentable).toEqual("moderate");        
     }
 
@@ -61,7 +61,7 @@ export class BlogTests {
         const blog = await this.service.get(id);
 
         Expect(blog).toBeType("object");
-        Expect(blog.title).toContain("Shopify Prime Test Blog - ");
+        Expect(blog.title).toContain("Shopify Admin API Test Blog - ");
         Expect(blog.commentable).toEqual("moderate");
     }
 

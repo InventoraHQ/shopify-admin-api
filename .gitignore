@@ -46,3 +46,9 @@ tests/built/
 
 # Ignore test project's yarn.lock
 tests/yarn.lock
+
+# Yarn see https://next.yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins

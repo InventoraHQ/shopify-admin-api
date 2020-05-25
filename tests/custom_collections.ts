@@ -33,7 +33,7 @@ export class CustomCollectionTests {
 
     private async create(scheduleForDeletion = true) {
         // const obj = await this.service.create({
-        //     title: "Shopify Prime Test Collection - " + Date.now(), 
+        //     title: "Shopify Admin API Test Collection - " + Date.now(), 
         // });
 
         // if (scheduleForDeletion) {

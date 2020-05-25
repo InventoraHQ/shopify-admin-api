@@ -2,7 +2,7 @@ const joinPaths = require('url-join');
 import fetch from 'node-fetch';
 import ShopifyError from './shopify_error';
 import uri = require("jsuri");
-import * as PQueue from 'p-queue';
+import PQueue from 'p-queue';
 
 export interface CallLimits {
     timestamp: number | undefined;
@@ -61,7 +61,7 @@ export class BaseService {
     public static buildDefaultHeaders() {
         const headers = {
             "Accept": "application/json",
-            "User-Agent": `Shopify Prime (https://github.com/nozzlegear/shopify-prime)`
+            "User-Agent": `Shopify Admin API (https://github.com/ArtCodeStudio/shopify-admin-api)`
         }
 
         return headers;

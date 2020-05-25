@@ -1,12 +1,12 @@
 {
-    "name": "shopify-prime",
-    "version": "2.14.0",
-    "description": "Shopify Prime is a NodeJS library built to help developers easily authenticate and make calls against the Shopify API. It was inspired by and borrows heavily from ShopifySharp.",
+    "name": "shopify-admin-api",
+    "version": "2.15.0-alpha.0",
+    "description": "Shopify Admin API is a NodeJS library built to help developers easily authenticate and make calls against the Shopify API. It was inspired by and borrows heavily from ShopifySharp.",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nozzlegear/shopify-prime.git"
+        "url": "git+https://github.com/ArtCodeStudio/shopify-admin-api.git"
     },
     "keywords": [
         "shopify",
@@ -15,16 +15,34 @@
         "api"
     ],
     "author": "Joshua Harms <joshua@nozzlegear.com>",
+    "contributors": [
+        {
+            "name": "Joshua Harms",
+            "email": "joshua@nozzlegear.com",
+            "url": "https://nozzlegear.com/"
+        },
+        {
+            "name": "Pascal Garber",
+            "email": "pascal@artandcode.studio",
+            "url": "https://artandcode.studio/"
+        },
+        {
+            "name": "Moritz Raguschat",
+            "email": "moritz@artandcode.studio",
+            "url": "https://artandcode.studio/"
+        }
+    ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/nozzlegear/shopify-prime/issues"
+        "url": "https://github.com/ArtCodeStudio/shopify-admin-api/issues"
     },
-    "homepage": "https://github.com/nozzlegear/shopify-prime#readme",
+    "homepage": "https://github.com/ArtCodeStudio/shopify-admin-api#readme",
     "dependencies": {
+        "@yarnpkg/pnpify": "^2.0.0-rc.22",
         "crypto-js": "^3.1.9-1",
         "jsuri": "^1.3.1",
         "node-fetch": "^2.3.0",
-        "p-queue": "^3.0.0",
+        "p-queue": "^6.4.0",
         "tap-bail": "^1.0.0",
         "url-join": "^4.0.0"
     },
@@ -44,7 +62,7 @@
         "tap-spec": "^5.0.0",
         "ts-node": "^8.0.2",
         "tslint": "^5.12.1",
-        "typescript": "^3.2.4"
+        "typescript": "^3.9.3"
     },
     "scripts": {
         "addTests": "ts-node .tasks/add-test-scripts.ts",

@@ -34,7 +34,7 @@ export class ProductTests {
 
     private async create(scheduleForDeletion = true) {
         const obj = await this.service.create({
-            title: "Shopify Prime Test Product",
+            title: "Shopify Admin API Test Product",
             vendor: "Auntie Dot",
             body_html: "<strong>This product was created while testing ShopifySharp!</strong>",
             product_type: "Foobars",
@@ -79,7 +79,7 @@ export class ProductTests {
 
         Expect(product.id).toBeType("number");
         Expect(product.id).toBeGreaterThanOrEqualTo(1);
-        Expect(product.title).toEqual("Shopify Prime Test Product");
+        Expect(product.title).toEqual("Shopify Admin API Test Product");
         Expect(product.vendor).toEqual("Auntie Dot");
         Expect(product.body_html).toEqual("<strong>This product was created while testing ShopifySharp!</strong>");
         Expect(product.product_type).toEqual("Foobars");
@@ -95,7 +95,7 @@ export class ProductTests {
         const product = await this.service.get(created.id);
 
         Expect(product.id).toEqual(created.id);
-        Expect(product.title).toEqual("Shopify Prime Test Product");
+        Expect(product.title).toEqual("Shopify Admin API Test Product");
         Expect(product.vendor).toEqual("Auntie Dot");
         Expect(product.body_html).toEqual("<strong>This product was created while testing ShopifySharp!</strong>");
         Expect(product.product_type).toEqual("Foobars");
@@ -158,7 +158,7 @@ export class ProductTests {
     @Timeout(5000)
     public async Test8() {
         const created = await this.create();
-        const newTitle = "Product Title Updated by Shopify Prime";
+        const newTitle = "Product Title Updated by Shopify Admin API";
         const updated = await this.service.update(created.id, { ...created as Prime.Models.ProductUpdateCreate, title: newTitle });
         
         Expect(updated.id).toEqual(created.id);
