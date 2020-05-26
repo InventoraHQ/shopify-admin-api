@@ -47,7 +47,7 @@ export class BaseService {
     constructor(private shopDomain: string, private accessToken: string, private resource: string) {
         //Ensure resource starts with admin/
         if (! /^[\/]?admin\//ig.test(resource)) {
-            this.resource = "admin/api/2019-04/" + resource;
+            this.resource = "admin/api/2020-04/" + resource;
         }
         if (!BaseService.apiInfo[shopDomain] || BaseService.apiInfo[shopDomain].accessToken !== accessToken) {
             BaseService.apiInfo[shopDomain] = new ApiInfo(accessToken);
@@ -125,8 +125,8 @@ export class BaseService {
                 return (new Promise(res => setTimeout(res, 10000 - remaining)))
                 .then(() => fetch(url.toString(), options));
             }
-            console.log('Fetch url:', url.toString());
-            console.log('options:', options)
+            // console.log('Fetch url:', url.toString());
+            // console.log('options:', options)
             return fetch(url.toString(), options);
         });
 

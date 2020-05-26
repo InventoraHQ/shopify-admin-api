@@ -10,7 +10,7 @@ Shopify Admin API for Node.js is a promise-driven NodeJS library built to help d
 
 Shopify Admin API is complete with full TypeScript definitions for all classes, interfaces and functions, and provides many quality of life improvements over most other Node Shopify libs. Tired of using undocumented libs that haven't been updated in ages, expect you to know all of the URL paths, and are little more than a basic wrapper over Node's http library? Give Shopify Admin API a try!
 
-# Installation
+## Installation
 
 Shopify Admin API can be installed from [NPM](https://npmjs.com/package/shopify-admin-api):
 
@@ -114,7 +114,7 @@ const orderService = new Orders(shopDomain, privateAppPassword)
 
 If you just need an access token for a private Shopify app, or for running the tests in this library, refer to the **Tests** section below.
 
-# Authorization and authentication
+## Authorization and authentication
 
 ### Ensure a given URL is a valid Shopify URL
 
@@ -552,67 +552,76 @@ let tags = await service.list();
 tags = await service.list({src: "https://example.com/my-filtered-url.js"});
 ```
 
-## Customers 
-The Customer resource stores information about a shop's customers, such as 
-their contact details, their order history, and whether they've agreed to 
+## Customers
+
+The Customer resource stores information about a shop's customers, such as
+their contact details, their order history, and whether they've agreed to
 receive email marketing.
 
-### Listing Customers 
-```js 
+### Listing Customers
+
+```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
-let customers = await service.list(); 
+let customers = await service.list();
 
-// Optionally, filter the list for new customers 
+// Optionally, filter the list for new customers
 let customers = await service.list({ limit: 10, since_id: customerId });
 ```
 
-### Searching Customers 
-```js 
+### Searching Customers
+
+```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
 
-let search = await service.search({query: 'Bob country:United States'}); 
+let search = await service.search({query: 'Bob country:United States'});
 ```
 
-### Getting count of Customers 
-```js 
+### Getting count of Customers
+
+```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
 
-let count = await service.count(); 
+let count = await service.count();
 ```
 
-### Creating a Customer 
-```js 
+### Creating a Customer
+
+```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
 
-let customer = await service.create({ 
+let customer = await service.create({
   email: "customer@myshopify.com",
   first_name: "Jane",
   last_name: "Doe"
 });
 ```
 
-### Updating a Customer 
-```js 
+### Updating a Customer
+
+```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
 
-let customer = await service.update({ 
+let customer = await service.update({
   email: "newemail@myshopify.com"
 });
 ```
-### Deleting a Customer 
-```js 
+
+### Deleting a Customer
+
+```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
 
 let customer = await service.delete(123456789);
 ```
 
-### Generating activation URL 
+### Generating activation URL
+
 ```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
@@ -620,13 +629,15 @@ const service = new Customers(shopDomain, shopAccessToken);
 let url = await service.createActivationUrl(123456789);
 // => https://domain.myshopify.comcom/account/activate/XXXXXX/XXXXXXXXXXXXX
 ```
-### Inviting a Customer 
+
+### Inviting a Customer
+
 ```js
 import { Customers } from "shopify-admin-api";
 const service = new Customers(shopDomain, shopAccessToken);
 const invite = await service.invite();
 
-// Optionally, send a custom invite 
+// Optionally, send a custom invite
 const invite = await service.invite({
   to: "alternateemail@gmail.com",
   from: "fromemail@myshopify.com",
@@ -634,6 +645,7 @@ const invite = await service.invite({
   custom_message: "My custom message"
 });
 ```
+
 ## Orders
 
 ### Creating an Order
