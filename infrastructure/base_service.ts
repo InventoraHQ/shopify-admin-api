@@ -147,8 +147,7 @@ export class BaseService {
             json = JSON.parse(json);
         }
         catch (e) {
-            //Set ok to false to throw an error with the body's text.
-            result.ok = false;
+            throw new ShopifyError(result, json);
         }
 
         if (!result.ok) {
