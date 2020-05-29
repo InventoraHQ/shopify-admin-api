@@ -14,7 +14,7 @@ export class Themes extends BaseService {
      * Creates a theme by providing the public URL of a ZIP file that contains the theme.
      * @param themes The theme being created.
      */
-    public create(theme: Partial<Theme>) {
+    public create(theme: Options.ThemeCreateOptions) {
         return this.createRequest<Theme>("POST", `.json`, "", { theme });
     }
 
