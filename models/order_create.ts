@@ -1,21 +1,16 @@
 import { Address } from "./address";
 import { TaxLine } from "./tax_line";
 import { Customer } from "./customer";
-import { ShopifyObject } from "./base";
 import { LineItem } from "./line_item";
 import { Fulfillment } from "./fulfillment";
-import { Refund } from "./refund";
 import { ShippingLine } from "./shipping_line";
 import { DiscountCode } from "./discount_code";
-import { DiscountApplication } from "./discount_application";
-import { ClientDetails } from "./client_details";
 import { PaymentDetails } from "./payment_details";
 import { PriceSet } from "./price_set";
 import { NoteAttribute } from "./note_attribute";
 
 // Enum imports
 import { FinancialStatus } from "../enums/financial_status";
-import { FulfillmentStatus } from "../enums/fulfillment_status";
 
 export interface OrderCreate {
 

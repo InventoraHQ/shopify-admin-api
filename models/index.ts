@@ -4,6 +4,7 @@ export * from "./applied_discount";
 export * from "./article";
 export * from "./article_image";
 export * from "./asset";
+export * from "./asset_update_create";
 export * from "./base";
 export * from "./blog";
 export * from "./carrier_service";

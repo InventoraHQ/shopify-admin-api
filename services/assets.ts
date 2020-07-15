@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Asset } from '../models';
+import { Asset, AssetUpdateCreate } from '../models';
 
 /**
  * A service for manipulating a Shopify shop's theme asset.
@@ -26,7 +26,7 @@ export class Assets extends BaseService {
      * @param id Id of the assets being updated.
      * @param assets The updated asset.
      */
-    public update(id: number, asset: Partial<Asset>) {
+    public update(id: number, asset: AssetUpdateCreate) {
         return this.createRequest<Asset>("PUT", `${id}/assets.json`, "asset", { asset });
     }
 
