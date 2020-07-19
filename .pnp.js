@@ -100,13 +100,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["logspect", "npm:1.3.1"],
             ["mkdirp", "npm:1.0.4"],
             ["node-fetch", "npm:2.6.0"],
-            ["p-queue", "npm:6.5.0"],
+            ["p-queue", "npm:6.6.0"],
             ["rimraf", "npm:3.0.2"],
             ["tap-bail", "npm:1.0.0"],
             ["tap-spec", "npm:5.0.0"],
             ["ts-node", "virtual:826e498053396c1d1b1a2d57ccb3ec305a526ea2d61f6841d754fc8830c8fb92c6a62ea8c498da1a0ec6fe57e089ec495a56c92a5c53f927636b21af315bda3d#npm:8.10.2"],
             ["tslint", "virtual:826e498053396c1d1b1a2d57ccb3ec305a526ea2d61f6841d754fc8830c8fb92c6a62ea8c498da1a0ec6fe57e089ec495a56c92a5c53f927636b21af315bda3d#npm:6.1.2"],
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"],
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"],
             ["url-join", "npm:4.0.1"]
           ],
           "linkType": "SOFT"
@@ -495,7 +495,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", null],
             ["lodash", "npm:4.17.15"],
             ["tslib", "npm:1.13.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"]
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"]
           ],
           "packagePeers": [
             "eslint",
@@ -2189,10 +2189,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["p-queue", [
-        ["npm:6.5.0", {
-          "packageLocation": "./.yarn/cache/p-queue-npm-6.5.0-83d785d3db-1.zip/node_modules/p-queue/",
+        ["npm:6.6.0", {
+          "packageLocation": "./.yarn/cache/p-queue-npm-6.6.0-a7e14c54e4-1.zip/node_modules/p-queue/",
           "packageDependencies": [
-            ["p-queue", "npm:6.5.0"],
+            ["p-queue", "npm:6.6.0"],
             ["eventemitter3", "npm:4.0.4"],
             ["p-timeout", "npm:3.2.0"]
           ],
@@ -2724,13 +2724,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["logspect", "npm:1.3.1"],
             ["mkdirp", "npm:1.0.4"],
             ["node-fetch", "npm:2.6.0"],
-            ["p-queue", "npm:6.5.0"],
+            ["p-queue", "npm:6.6.0"],
             ["rimraf", "npm:3.0.2"],
             ["tap-bail", "npm:1.0.0"],
             ["tap-spec", "npm:5.0.0"],
             ["ts-node", "virtual:826e498053396c1d1b1a2d57ccb3ec305a526ea2d61f6841d754fc8830c8fb92c6a62ea8c498da1a0ec6fe57e089ec495a56c92a5c53f927636b21af315bda3d#npm:8.10.2"],
             ["tslint", "virtual:826e498053396c1d1b1a2d57ccb3ec305a526ea2d61f6841d754fc8830c8fb92c6a62ea8c498da1a0ec6fe57e089ec495a56c92a5c53f927636b21af315bda3d#npm:6.1.2"],
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"],
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"],
             ["url-join", "npm:4.0.1"]
           ],
           "linkType": "SOFT"
@@ -3172,7 +3172,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["diff", "npm:4.0.2"],
             ["make-error", "npm:1.3.0"],
             ["source-map-support", "npm:0.5.19"],
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"],
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"],
             ["yn", "npm:3.1.1"]
           ],
           "packagePeers": [
@@ -3208,7 +3208,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["semver", "npm:5.7.1"],
             ["tslib", "npm:1.13.0"],
             ["tsutils", "virtual:f9f54a79fec7b84de91d930da240c0fa883c350aceaf8267c574a6d145e5797c52422cf6a2c028b8a4f886f16ad4c63cc2f847398d55df3173fa481bfd2f2d73#npm:2.29.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"]
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"]
           ],
           "packagePeers": [
             "typescript"
@@ -3222,7 +3222,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["tsutils", "virtual:f9f54a79fec7b84de91d930da240c0fa883c350aceaf8267c574a6d145e5797c52422cf6a2c028b8a4f886f16ad4c63cc2f847398d55df3173fa481bfd2f2d73#npm:2.29.0"],
             ["tslib", "npm:1.13.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"]
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"]
           ],
           "packagePeers": [
             "typescript"
@@ -3249,10 +3249,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1", {
-          "packageLocation": "./.yarn/cache/typescript-patch-7a8911ca6a-1.zip/node_modules/typescript/",
+        ["patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1", {
+          "packageLocation": "./.yarn/cache/typescript-patch-5a00602f03-1.zip/node_modules/typescript/",
           "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=226bd1"]
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=226bd1"]
           ],
           "linkType": "HARD"
         }]

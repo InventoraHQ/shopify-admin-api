@@ -2,6 +2,8 @@ const joinPaths = require('url-join');
 import fetch from 'node-fetch';
 import ShopifyError from './shopify_error';
 import uri = require("jsuri");
+// TODO use https://www.npmjs.com/package/bottleneck
+// used on https://github.com/dcworldwide/Shopify-Prime/blob/master/infrastructure/base_service.ts?
 import PQueue from 'p-queue';
 
 export interface CallLimits {
