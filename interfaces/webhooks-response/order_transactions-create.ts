@@ -9,6 +9,9 @@ export interface PaymentDetails {
     credit_card_company: string;
 }
 
+/**
+ * TODO check if we can reuse interfaces from model in this interfaces
+ */
 export interface WebhookOrderTransactionCreate {
     id: number;
     order_id: number;

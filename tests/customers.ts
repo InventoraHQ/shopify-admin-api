@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class CustomerTests {
     private service = new Prime.Customers(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.Customer[] = [];
+    private created: Prime.InterfacesCustomer[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {
@@ -45,7 +45,7 @@ export class CustomerTests {
         const list = await this.service.list();
 
         Expect(list).toBeAnArray();
-        Expect(list).itemsToPassValidator<Prime.Models.Customer>(i => {
+        Expect(list).itemsToPassValidator<Prime.InterfacesCustomer>(i => {
             Expect(i).toBeType("object");
             Expect(i.id).toBeGreaterThan(0);
         })

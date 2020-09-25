@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import {Customer, CustomerInvite} from '../models';
+import {Customer, CustomerInvite} from '../interfaces';
 
 export class Customers extends BaseService {
     constructor(shopDomain: string, accessToken: string) {

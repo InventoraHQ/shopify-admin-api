@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { UsageCharge } from '../models';
+import { UsageCharge } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's UsageCharges API.

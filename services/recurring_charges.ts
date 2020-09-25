@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { RecurringCharge } from '../models';
+import { RecurringCharge } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's RecurringCharge API.

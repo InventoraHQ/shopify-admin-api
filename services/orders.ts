@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Order, OrderCreate,Transaction } from '../models';
+import { Order, OrderCreate,Transaction } from '../interfaces';
 
 export class Orders extends BaseService {
     constructor(shopDomain: string, accessToken: string) {

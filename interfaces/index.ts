@@ -1,3 +1,4 @@
+export * as WebhooksReponse from './webhooks-response';
 export * from "./address";
 export * from "./application_credit";
 export * from "./applied_discount";
@@ -56,3 +57,4 @@ export * from "./tax_line";
 export * from "./transaction";
 export * from "./usage_charge";
 export * from "./webhook";
+

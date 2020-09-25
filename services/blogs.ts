@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Blog } from '../models';
+import { Blog } from '../interfaces';
 
 /**
  * A service for manipulating a Shopify shop's blogs. For manipulating a blog's posts, use the Articles class instead.

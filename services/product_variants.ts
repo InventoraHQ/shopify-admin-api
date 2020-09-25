@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { ProductVariant } from '../models';
+import { ProductVariant } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

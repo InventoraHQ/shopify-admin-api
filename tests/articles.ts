@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class ArticleTests {
     private service = new Prime.Articles(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.Article[] = [];
+    private created: Prime.InterfacesArticle[] = [];
 
     private blogId: number;
 

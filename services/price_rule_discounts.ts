@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { PriceRuleDiscountCode } from '../models';
+import { PriceRuleDiscountCode } from '../interfaces';
 
 /**
  * A service for manipulating Shopify Price Rules.

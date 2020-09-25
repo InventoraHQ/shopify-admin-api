@@ -10,9 +10,9 @@
         "declaration": true,
         "experimentalDecorators": true
     },
+    "include": ["index.ts", "src"],
     "exclude": [
         "node_modules",
-        "dist/**/*.d.ts",
         "dist"
     ]
 }

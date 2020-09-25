@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class ScriptTagTests {
     private service = new Prime.ScriptTags(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.ScriptTag[] = [];
+    private created: Prime.InterfacesScriptTag[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {
@@ -117,7 +117,7 @@ export class ScriptTagTests {
         const list = await this.service.list();
 
         Expect(list.length).toBeGreaterThanOrEqualTo(1);
-        Expect(list).itemsToPassValidator<Prime.Models.ScriptTag>(tag => {
+        Expect(list).itemsToPassValidator<Prime.InterfacesScriptTag>(tag => {
             Expect(tag.id).toBeType("number");
             Expect(tag.src).toBeType("string");
             Expect(tag.created_at).toBeType("string");

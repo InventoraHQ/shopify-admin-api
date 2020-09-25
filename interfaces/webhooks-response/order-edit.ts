@@ -24,6 +24,9 @@ export interface OrderEdit {
     line_items: LineItems;
 }
 
+/**
+ * TODO check if we can reuse interfaces from model in this interfaces
+ */
 export interface WebhookOrdersEdited {
     order_edit: OrderEdit;
 }

@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class BlogTests {
     private service = new Prime.Blogs(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.Blog[] = [];
+    private created: Prime.InterfacesBlog[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {

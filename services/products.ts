@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Product, ProductUpdateCreate } from '../models';
+import { Product, ProductUpdateCreate } from '../interfaces';
 
 export class Products extends BaseService {
     constructor(shopDomain: string, accessToken: string) {

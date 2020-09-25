@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Page } from '../models';
+import { Page } from '../interfaces';
 
 /**
  * A service for manipulating Shopify pages.

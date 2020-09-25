@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { Fulfillment } from '../models';
+import { Fulfillment } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { SmartCollection } from '../models';
+import { SmartCollection } from '../interfaces';
 
 export class SmartCollections extends BaseService {
     constructor(shopDomain: string, accessToken: string) {

@@ -16,9 +16,9 @@ export class OrderTests {
 
     private priceRulesDiscountService = new Prime.PriceRuleDiscounts(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.PriceRule[] = [];
+    private created: Prime.InterfacesPriceRule[] = [];
 
-    private createdDiscounts: { [prId: number]: Prime.Models.PriceRuleDiscountCode[] } = {};
+    private createdDiscounts: { [prId: number]: Prime.InterfacesPriceRuleDiscountCode[] } = {};
 
     @AsyncTeardownFixture
     private async teardownAsync() {
@@ -85,8 +85,8 @@ export class OrderTests {
     @AsyncTest("should create a price rule")
     @Timeout(5000)
     public async Test1() {
-        let rule: Prime.Models.PriceRule;
-        let discount: Prime.Models.PriceRuleDiscountCode;
+        let rule: Prime.InterfacesPriceRule;
+        let discount: Prime.InterfacesPriceRuleDiscountCode;
 
         try {
             rule = await this.create();

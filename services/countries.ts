@@ -1,5 +1,5 @@
 import BaseService from "../infrastructure/base_service";
-import { Country } from "../models/country";
+import { Country } from "../interfaces/country";
 import { FieldOptions } from "../options/base";
 import { CountryListOptions } from "../options/country";
 

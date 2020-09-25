@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Theme } from '../models';
+import { Theme } from '../interfaces';
 
 /**
  * A service for manage Shopify shop's theme.

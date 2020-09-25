@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { Article } from '../models';
+import { Article } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Asset, AssetUpdateCreate } from '../models';
+import { Asset, AssetUpdateCreate } from '../interfaces';
 
 /**
  * A service for manipulating a Shopify shop's theme asset.

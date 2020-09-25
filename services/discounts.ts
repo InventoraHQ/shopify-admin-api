@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Discount } from '../models';
+import { Discount } from '../interfaces';
 
 /**
  * A service for manipulating Shopify discounts.

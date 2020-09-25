@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class CustomCollectionTests {
     private service = new Prime.CustomCollections(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.CustomCollection[] = [];
+    private created: Prime.InterfacesCustomCollection[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {
@@ -41,7 +41,7 @@ export class CustomCollectionTests {
         // };
 
         // return obj;
-        return {} as Prime.Models.CustomCollection;
+        return {} as Prime.InterfacesCustomCollection;
     }
 
     @AsyncTest("should count collections")
@@ -58,7 +58,7 @@ export class CustomCollectionTests {
         const list = await this.service.list();
         
         Expect(list).toBeAnArray();
-        Expect(list).itemsToPassValidator<Prime.Models.CustomCollection>(i => {
+        Expect(list).itemsToPassValidator<Prime.InterfacesCustomCollection>(i => {
             Expect(i).toBeType("object");
             Expect(i.id).toBeGreaterThan(0);
         })

@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Webhook } from '../models';
+import { Webhook } from '../interfaces';
 
 /**
  * A service for manipulating Shopify webhooks.

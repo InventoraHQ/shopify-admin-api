@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { ApplicationCredit } from '../models';
+import { ApplicationCredit } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

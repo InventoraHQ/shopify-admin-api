@@ -1,4 +1,4 @@
-import { CarrierService } from '../models';
+import { CarrierService } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

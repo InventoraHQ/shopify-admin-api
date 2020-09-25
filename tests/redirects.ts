@@ -14,7 +14,7 @@ import { Config, createGuid, Expect } from './test_utils';
 export class RedirectTests {
     private service = new Prime.Redirects(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.Redirect[] = [];
+    private created: Prime.InterfacesRedirect[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {

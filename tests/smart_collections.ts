@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class SmartCollectionTests {
     private service = new Prime.SmartCollections(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.SmartCollection[] = [];
+    private created: Prime.InterfacesSmartCollection[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {
@@ -57,7 +57,7 @@ export class SmartCollectionTests {
         const list = await this.service.list();
         
         Expect(list).toBeAnArray();
-        Expect(list).itemsToPassValidator<Prime.Models.SmartCollection>(item => {
+        Expect(list).itemsToPassValidator<Prime.InterfacesSmartCollection>(item => {
             Expect(item.id).toBeType("number");
             Expect(item.id).toBeGreaterThanOrEqualTo(1);
         })

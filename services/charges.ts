@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Charge } from '../models';
+import { Charge } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's ApplicationCharge API.

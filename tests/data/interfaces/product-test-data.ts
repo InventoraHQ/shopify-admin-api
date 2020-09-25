@@ -1,4 +1,4 @@
-import { ProductUpdateCreate } from '../../../models';
+import { ProductUpdateCreate } from '../../../interfaces';
 
 export interface IProductTestData {
   info: string;

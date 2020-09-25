@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { Location } from '../models';
+import { Location } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { Transaction } from '../models';
+import { Transaction } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**

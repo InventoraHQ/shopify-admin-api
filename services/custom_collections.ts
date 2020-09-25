@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { CustomCollection } from '../models';
+import { CustomCollection } from '../interfaces';
 
 export class CustomCollections extends BaseService {
     constructor(shopDomain: string, accessToken: string) {

@@ -1,38 +1,55 @@
-export type WebhookTopic = (
-    "orders/create" |
-    "orders/delete" |
-    "orders/updated" |
-    "orders/paid" |
-    "orders/cancelled" |
-    "orders/fulfilled" |
-    "orders/partially_fulfilled" |
-    "order_transations/create" |
-    "carts/create" |
-    "carts/update" |
-    "checkouts/create" |
-    "checkouts/update" |
-    "checkouts/delete" |
-    "refunds/create" |
-    "products/create" |
-    "products/update" |
-    "products/delete" |
-    "collections/create" |
-    "collections/update" |
-    "collections/delete" |
-    "customer_groups/create" |
-    "customer_groups/update" |
-    "customer_groups/delete" |
-    "customers/create" |
-    "customers/enable" |
-    "customers/disable" |
-    "customers/update" |
-    "customers/delete" |
-    "fulfillments/create" |
-    "fulfillments/update" |
-    "shop/update" |
-    "disputes/create" |
-    "disputes/update" |
-    "app/uninstalled" |
-    "themes/publish" |
-    string
-)
+export type WebhookTopic = 'carts/create'
+| 'carts/update'
+| 'checkouts/create'
+| 'checkouts/update'
+| 'checkouts/delete'
+| 'collections/create'
+| 'collections/update'
+| 'collections/delete'
+| 'collection_listings/add'
+| 'collection_listings/remove'
+| 'collection_listings/update'
+| 'customers/create'
+| 'customers/disable'
+| 'customers/enable'
+| 'customers/update'
+| 'customers/delete'
+| 'customer_groups/create'
+| 'customer_groups/update'
+| 'customer_groups/delete'
+| 'draft_orders/create'
+| 'draft_orders/update'
+| 'fulfillments/create'
+| 'fulfillments/update'
+| 'fulfillment_events/create'
+| 'fulfillment_events/delete'
+| 'inventory_items/create'
+| 'inventory_items/update'
+| 'inventory_items/delete'
+| 'inventory_levels/connect'
+| 'inventory_levels/update'
+| 'inventory_levels/disconnect'
+| 'locations/create'
+| 'locations/update'
+| 'locations/delete'
+| 'orders/cancelled'
+| 'orders/create'
+| 'orders/fulfilled'
+| 'orders/paid'
+| 'orders/partially_fulfilled'
+| 'orders/updated'
+| 'orders/delete'
+| 'order_transactions/create'
+| 'products/create'
+| 'products/update'
+| 'products/delete'
+| 'product_listings/add'
+| 'product_listings/remove'
+| 'product_listings/update'
+| 'refunds/create'
+| 'app/uninstalled'
+| 'shop/update'
+| 'themes/create'
+| 'themes/publish'
+| 'themes/update'
+| 'themes/delete';

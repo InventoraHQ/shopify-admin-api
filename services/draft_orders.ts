@@ -1,6 +1,6 @@
 import * as Options from "../options";
 import { BaseService } from "../infrastructure";
-import { DraftOrder } from "../models";
+import { DraftOrder } from "../interfaces";
 
 /**
  * A service for manipulating Shopify draft orders.

@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { ScriptTag } from '../models';
+import { ScriptTag } from '../interfaces';
 
 /**
  * A service for manipulating Shopify script tags.

@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Comment } from '../models';
+import { Comment } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's Blog Comments API.

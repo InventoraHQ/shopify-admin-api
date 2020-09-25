@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { InventoryLevel } from '../models';
+import { InventoryLevel } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's InventoryLevels API.

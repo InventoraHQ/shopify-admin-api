@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { GiftCard } from '../models';
+import { GiftCard } from '../interfaces';
 
 /**
  * A service for manipulating Shopify Gift Cards

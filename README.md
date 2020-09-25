@@ -30,15 +30,15 @@ import * as Shopify from "shopify-admin-api";
 
 ## Typescript declarations
 
-Using TypeScript? The TypeScript compiler will automatically pull in Shopify Admin API definitions for you when you install Shopify Admin API, **as long as you're using TypeScript 2+**. Interfaces and extra types are available under the `Models`, `Enums` and `Options` exports from the main `"shopify-admin-api"` module.
+Using TypeScript? The TypeScript compiler will automatically pull in Shopify Admin API definitions for you when you install Shopify Admin API, **as long as you're using TypeScript 2+**. Interfaces and extra types are available under the `Interfaces`, `Enums` and `Options` exports from the main `"shopify-admin-api"` module.
 
 ```js
 import { Shops } from "shopify-admin-api";
 
 // Typescript interfaces — not real JS objects:
-import { Models, Enums, Options } from "shopify-admin-api";
+import { Interfaces, Enums, Options } from "shopify-admin-api";
 
-const shop: Models.Shop = await new Shops(shopDomain, shopAccessToken).get(shopId);
+const shop: InterfacesShop = await new Shops(shopDomain, shopAccessToken).get(shopId);
 ```
 
 Finally, because Shopify Admin API uses async/await and promises, you'll need to set your tsconfig.json's target to `"es6"`. While not strictly necessary, Typescript won't know about the `Promise` type and will default all services' return types to `any` if you don't set your target to es6.

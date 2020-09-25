@@ -1,5 +1,5 @@
 import { BaseService } from '../infrastructure';
-import { Policy } from '../models';
+import { Policy } from '../interfaces';
 
 /**
  * A service for reading a shop's policies.

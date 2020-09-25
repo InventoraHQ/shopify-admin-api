@@ -14,7 +14,7 @@ import { Config, createGuid, Expect } from './test_utils';
 export class WebhookTests {
     private service = new Prime.Webhooks(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.Webhook[] = [];
+    private created: Prime.InterfacesWebhook[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {

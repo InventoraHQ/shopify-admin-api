@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Redirect } from '../models';
+import { Redirect } from '../interfaces';
 
 /**
  * A service for manipulating Shopify redirects.

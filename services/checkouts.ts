@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Checkout } from '../models';
+import { Checkout } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's Checkout API.

@@ -1,6 +1,6 @@
 import * as Options from '../options';
 import { BaseService } from '../infrastructure';
-import { Collect } from '../models';
+import { Collect } from '../interfaces';
 
 /**
  * A service for manipulating Shopify's Collect API.

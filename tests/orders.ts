@@ -14,7 +14,7 @@ import { Config, Expect } from './test_utils';
 export class OrderTests {
     private service = new Prime.Orders(Config.shopDomain, Config.accessToken);
 
-    private created: Prime.Models.Order[] = [];
+    private created: Prime.InterfacesOrder[] = [];
 
     @AsyncTeardownFixture
     private async teardownAsync() {
