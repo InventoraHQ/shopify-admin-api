@@ -7,7 +7,7 @@ import { Comment } from '../interfaces';
  */
 export class Comments extends BaseService {
     constructor(shopDomain: string, accessToken: string) {
-        super(shopDomain, accessToken, "comments");
+      super(shopDomain, accessToken, "comments");
     }
 
     /**
@@ -20,7 +20,7 @@ export class Comments extends BaseService {
      * * email
      */
     public create(comment: Partial<Comment>) {
-        return this.createRequest<Comment>("POST", ".json", "comment", { comment });
+      return this.createRequest<Comment>("POST", ".json", "comment", { comment });
     }
 
     /**
@@ -46,7 +46,7 @@ export class Comments extends BaseService {
      * @param options Options for filtering the result.
      */
     public get(id: number, options?: Options.CommentGetOptions) {
-        return this.createRequest<Comment>("GET", `${id}.json`, "comment", options);
+      return this.createRequest<Comment>("GET", `${id}.json`, "comment", options);
     }
 
     /**
@@ -54,7 +54,7 @@ export class Comments extends BaseService {
      * @param options Options for pagination and filtering the result.
      */
     public list(options?: Options.CommentListOptions) {
-        return this.createRequest<Comment[]>("GET", ".json", "comments", options);
+      return this.createRequest<Comment[]>("GET", ".json", "comments", options);
     }
 
     /**
