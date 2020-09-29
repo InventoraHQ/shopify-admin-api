@@ -11,6 +11,7 @@ import { NoteAttribute } from "./note_attribute";
 
 // Enum imports
 import { FinancialStatus } from "../enums/financial_status";
+import { FulfillmentStatus } from "../enums/fulfillment_status"
 
 export interface OrderCreate {
 
@@ -71,7 +72,7 @@ export interface OrderCreate {
     /**
      * The fulfillment status for this order. Known values are 'fulfilled', 'partial' or null.
      */
-    fulfillment_status?: "fulfilled" | "partial" | string | null;
+    fulfillment_status: FulfillmentStatus;
 
     /**
      * An array of <see cref="ShopifyLineItem"/> objects, each one containing information about an item in the order.

@@ -1,7 +1,10 @@
 export type FulfillmentStatus = (
-    "shipped" |
+    "fulfilled" |
+    "restocked" |
     "partial" |
-    "unshipped" |
-    "any" |
-    string
+    // TODO check the types below
+    // "shipped" |
+    // "unshipped" |
+    //  "any" |
+    null
 );

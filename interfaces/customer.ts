@@ -45,6 +45,11 @@ export interface Customer extends ShopifyObject {
      */
     last_name: string | null;
 
+    /**
+     * The customer's first and last names.
+     */
+    name: string | null;
+
     /** 
      * The id of the customer's last order.
      */
