@@ -13,6 +13,7 @@ export * from "./orders";
 export * from "./pages";
 export * from "./price_rule_discounts";
 export * from "./product_collection";
+export * from "./product_variants";
 export * from "./products";
 export * from "./redirects";
 export * from "./script_tags";

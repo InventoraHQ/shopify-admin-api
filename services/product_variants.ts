@@ -1,5 +1,5 @@
 import * as Options from '../options';
-import { ProductVariant } from '../interfaces';
+import { ProductVariant, ProductVariantCreate, ProductVariantUpdate } from '../interfaces';
 import { BaseService } from '../infrastructure';
 
 /**
@@ -15,7 +15,7 @@ export class ProductVariants extends BaseService {
      * @param id Id of the variant being retrieved.
      * @param options Options for filtering the result.
      */
-    public get(id: number, options?: Options.FieldOptions) {
+    public get(id: number, options?: Options.ProductVariantGetOptions) {
         return this.createRequest<ProductVariant>("GET", `variants/${id}.json`, "variant", options);
     }
 
@@ -24,7 +24,7 @@ export class ProductVariants extends BaseService {
      * @param productId Id of the product that the variants belong to.
      * @param options Options for filtering the results.
      */
-    public list(productId: number, options?: Options.FieldOptions) {
+    public list(productId: number, options?: Options.ProductVariantListOptions) {
         return this.createRequest<ProductVariant>("GET", `products/${productId}/variants.json`, "variants", options);
     }
 
@@ -37,11 +37,20 @@ export class ProductVariants extends BaseService {
     }
 
     /**
+     * Creates a new product variant 
+     * @param productId Id of the product that the varaint belongs to.
+     * @param productVariant The updated variant.
+     */
+    public create(productId: number, variant: ProductVariantCreate) {
+        return this.createRequest<ProductVariant>("POST", `variants/${productId}/variants.json`, "variant", { variant });
+    }
+
+    /**
      * Updates an variant with the given id.
      * @param id Id of the variant.
      * @param productVariant The updated variant.
      */
-    public update(id: number, variant: Partial<ProductVariant>) {
+    public update(id: number, variant: ProductVariantUpdate) {
         return this.createRequest<ProductVariant>("PUT", `variants/${id}.json`, "variant", { variant });
     }
 

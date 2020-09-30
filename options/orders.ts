@@ -20,7 +20,9 @@ export interface OrderListOptions extends FieldOptions, DateOptions, ProcessedOp
     ids?: string;
 }
 
-export interface OrderGetOptions extends FieldOptions {}
+export interface OrderGetOptions extends FieldOptions {
+    status?: OrderStatus; // Seems to be undocumentated but without status="any" archived orders are not found by the api
+}
 
 export interface OrderCreateOptions {
     send_receipt?: boolean;

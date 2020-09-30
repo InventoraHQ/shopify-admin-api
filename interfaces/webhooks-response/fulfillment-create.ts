@@ -1,3 +1,3 @@
-import { Fulfillment } from  '../fulfillment';
+import { WebhookFulfillmentBase } from  './fulfillment-base';
 
-export interface WebhookFulfillmentCreate extends Fulfillment {};
+export interface WebhookFulfillmentCreate extends WebhookFulfillmentBase {};
