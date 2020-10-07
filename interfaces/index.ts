@@ -57,6 +57,7 @@ export * from "./redirect";
 export * from "./refund";
 export * from "./script_tag";
 export * from "./shipping_line";
+export * from "./shipping_rate";
 export * from "./shop";
 export * from "./theme";
 export * from "./tax_line";
