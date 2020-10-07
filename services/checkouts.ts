@@ -26,11 +26,18 @@ export class Checkouts extends BaseService {
     }
 
     /**
+     * Completes a checkout.
+     */
+    public complete(token: string) {
+        return this.createRequest<Checkout>("PUT", `${token}/complete.json`, "checkout", {});
+      }
+
+    /**
      * Gets a checkout with the given token.
      * @param token The token of the checkout to get.
      * @param options Options for filtering the result.
      */
-    public get(token: string, options?: Options.FieldOptions) {
+    public get(token: string, options?: Options.CheckoutGetOptions) {
         return this.createRequest<Checkout>("GET", `${token}.json`, "checkout", options);
     }
 
@@ -38,7 +45,7 @@ export class Checkouts extends BaseService {
      * Retrieves a list of up to 250 checkouts.
      * @param options Options for pagination and filtering the result.
      */
-    public list(options?: Options.ListOptions & Options.DateOptions & Options.FieldOptions) {
+    public list(options?: Options.CheckoutListOptions) {
         return this.createRequest<Checkout[]>("GET", ".json", "checkouts", options);
     }
 }

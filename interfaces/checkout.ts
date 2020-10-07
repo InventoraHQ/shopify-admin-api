@@ -10,10 +10,11 @@ import { TaxLine } from './tax_line';
  * Represents an abandoned checkout.
  */
 export interface Checkout {
+
     /**
-     * The ID for the checkout.
-     */ 
-    id: number;
+     * A unique identifier for a particular checkout.
+     */
+    token: string;
 
     /**
      * The recovery URL that's sent to a customer so they can recover their checkout.
@@ -176,11 +177,6 @@ export interface Checkout {
      * Whether taxes are included in the price.
      */
     taxes_included: boolean;
-
-    /**
-     * A unique ID for a checkout.
-     */
-    token: string;
 
     /**
      * The total amount of discounts to be applied.

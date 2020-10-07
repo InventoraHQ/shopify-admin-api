@@ -1,6 +1,7 @@
 export * from "./articles";
 export * from "./base";
 export * from "./blogs";
+export * from "./checkout";
 export * from "./collects";
 export * from "./comments";
 export * from "./country";
