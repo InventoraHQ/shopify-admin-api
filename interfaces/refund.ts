@@ -32,7 +32,7 @@ export interface Refund extends ShopifyObject {
     /**
      *  A list of refunded line items.
      */
-    refund_line_items: RefundLineItem;
+    refund_line_items: RefundLineItem[];
     /**
      *  Whether to add the line items back to the store's inventory.
      *  DEPRECATED: Provide a restock_type (on individual `refund_line_item` objects) to influence how this refund affects inventory instead.
