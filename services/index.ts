@@ -1,3 +1,4 @@
+export * from "./access_scopes";
 export * from "./api_permissions";
 export * from "./application_credits";
 export * from "./articles";

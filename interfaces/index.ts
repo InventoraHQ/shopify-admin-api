@@ -1,4 +1,5 @@
 export * as WebhooksReponse from './webhooks-response';
+export * from "./access_scope";
 export * from "./address";
 export * from "./application_credit";
 export * from "./applied_discount";
