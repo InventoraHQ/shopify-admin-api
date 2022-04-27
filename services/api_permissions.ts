@@ -5,7 +5,7 @@ import { BaseService } from '../infrastructure';
  */
 export class ApiPermissions extends BaseService {
     constructor(shopDomain: string, accessToken: string) {
-      super(shopDomain, accessToken, "api_permissions");
+        super(shopDomain, accessToken, "api_permissions");
     }
 
     /**

@@ -1,4 +1,3 @@
-export * from "./access_scopes";
 export * from "./api_permissions";
 export * from "./application_credits";
 export * from "./articles";
@@ -21,6 +20,7 @@ export * from "./inventory_levels";
 export * from "./locations";
 export * from "./orders";
 export * from "./pages";
+export * from "./payment_transactions";
 export * from "./policies";
 export * from "./price_rule_discounts";
 export * from "./price_rules";

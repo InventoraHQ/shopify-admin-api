@@ -1,5 +1,4 @@
 export * as WebhooksReponse from './webhooks-response';
-export * from "./access_scope";
 export * from "./address";
 export * from "./application_credit";
 export * from "./applied_discount";
@@ -41,6 +40,7 @@ export * from "./order_create";
 export * from "./order";
 export * from "./page";
 export * from "./payment_details";
+export * from "./payment_transaction";
 export * from "./policy";
 export * from "./price_rule";
 export * from "./price_rule_discount_code";
