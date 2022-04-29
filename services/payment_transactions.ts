@@ -11,8 +11,8 @@ export class PaymentTransactions extends BaseService {
      * Retrieves a list of all balance transactions ordered by processing time, with the most recent being first.
      * @param options Options for filtering the results.
      */
-    public list(orderId?: Options.PaymentTransactionListOptions) {
-        return this.createRequest<Partial<PaymentTransaction[]>>("GET", "transactions.json", "transactions", Object.assign({ source_order_id: orderId }));
+    public list(options?: Options.PaymentTransactionListOptions) {
+        return this.createRequest<Partial<PaymentTransaction[]>>("GET", "transactions.json", "transactions", options);
     }
 }
 

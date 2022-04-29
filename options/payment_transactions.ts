@@ -2,11 +2,6 @@ import { DateOptions, FieldOptions, ListOptions, ProcessedOptions } from "./base
 
 export interface PaymentTransactionListOptions extends FieldOptions, DateOptions, ProcessedOptions, ListOptions {
     /**
-     * Filter response by order ID
-     */
-     orderId?: number;
-
-    /**
      * Filter response to transactions exclusively before the specified ID
      */
     last_id?: number;
