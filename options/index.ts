@@ -12,6 +12,7 @@ export * from "./inventory_items";
 export * from "./inventory_levels";
 export * from "./orders";
 export * from "./pages";
+export * from "./payment_transactions";
 export * from "./price_rule_discounts";
 export * from "./product_collection";
 export * from "./product_variants";
