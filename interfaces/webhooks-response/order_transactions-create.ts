@@ -1,7 +1,7 @@
 export interface Receipt {
 }
 
-export interface PaymentDetails {
+export interface WebhookPaymentDetails {
     credit_card_bin?: any;
     avs_result_code?: any;
     cvv_result_code?: any;
@@ -33,7 +33,7 @@ export interface WebhookOrderTransactionCreate {
     amount: string;
     currency?: any;
     admin_graphql_api_id: string;
-    payment_details: PaymentDetails;
+    payment_details: WebhookPaymentDetails;
 }
 
 
