@@ -34,10 +34,10 @@ export class Orders extends BaseService {
 
     /**
      * Retrieves a list of fulfillment orders for a specific order.
-     * @param order_id The ID of the order that is associated with the fulfillment orders.
+     * @param orderId The ID of the order that is associated with the fulfillment orders.
      */
-    public listFulfillmentOrders(order_id?: Options.OrderListOptions) {
-        return this.createRequest<Partial<Order>[]>("GET", `${order_id}/fulfillment_orders.json`, "orders");
+    public listFulfillmentOrders(orderId: string) {
+        return this.createRequest("GET", `${orderId}/fulfillment_orders.json`, "fulfillment_orders");
     }
 
     /**
