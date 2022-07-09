@@ -1,5 +1,5 @@
 {
-    "name": "shopify-admin-api",
+    "name": "@inventora/shopify-admin-api",
     "version": "2.16.7",
     "description": "Shopify Admin API is a NodeJS library built to help developers easily authenticate and make calls against the Shopify API. It was inspired by and borrows heavily from ShopifySharp.",
     "main": "dist/index.js",
@@ -71,7 +71,7 @@
         "prepublishOnly": "npm run barrel && npm run build",
         "pretsc": "rimraf dist",
         "tsc": "tsc -p .",
-        "clean": "rm ./dist -rf",
+        "clean": "rm -rf ./dist",
         "build": "npm run clean && npm run tsc",
         "watch": "npm run clean && npm run tsc -- --watch",
         "barrel:enums": "barrelsby -d enums --delete",
