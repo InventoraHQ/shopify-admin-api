@@ -54,3 +54,6 @@ tests/yarn.lock
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+*.swp
+.DS_Store
