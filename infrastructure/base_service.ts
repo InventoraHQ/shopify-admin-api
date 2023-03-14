@@ -159,12 +159,10 @@ export class BaseService {
         return rootElement ? json[rootElement] as T : json as T;
     }
 
-    protected async createPaginatedRequest<T>(method: "GET" | "POST" | "PUT" | "DELETE", path: string, rootElement?: string, payload?: Object) {
-        method = method.toUpperCase() as any;
-
+    protected async createPaginatedRequest<T>(path: string, rootElement?: string, payload?: Object) {
         const options = {
             headers: BaseService.buildDefaultHeaders(),
-            method: method,
+            method: "GET",
             body: undefined as string,
         };
 
@@ -176,18 +174,13 @@ export class BaseService {
         url.protocol("https");
         url.path(this.joinUriPaths(this.resource, path));
 
-        if ((method === "GET" || method === "DELETE") && payload) {
+        if (payload) {
             for (const prop in payload) {
                 const value = payload[prop];
 
                 // Shopify expects qs array values to be joined by a comma, e.g. fields=field1,field2,field3
                 url.addQueryParam(prop, Array.isArray(value) ? value.join(",") : value);
             }
-        }
-        else if (payload) {
-            options.body = JSON.stringify(payload);
-
-            options.headers["Content-Type"] = "application/json";
         }
 
 
