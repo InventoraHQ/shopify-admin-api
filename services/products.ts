@@ -21,7 +21,7 @@ export class Products extends BaseService {
      * @param options Options for filtering the results.
      */
     public list(options?: Options.ProductListOptions) {
-        return this.createRequest<Product[]>("GET", ".json", "products", options);
+        return this.createPaginatedRequest<Product[]>("GET", ".json", "products", options);
     }
 
     /**
