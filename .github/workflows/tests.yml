@@ -12,6 +12,6 @@ jobs:
         with:
           node-version: 14
       - name: Installing dependencies
-        run: npm install
+        run: yarn install
       - name: Running tests
         run: yarn prepublishOnly
