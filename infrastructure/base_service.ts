@@ -158,6 +158,112 @@ export class BaseService {
 
         return rootElement ? json[rootElement] as T : json as T;
     }
+
+    protected async createPaginatedRequest<T>(path: string, rootElement?: string, payload?: Object) {
+        const options = {
+            headers: BaseService.buildDefaultHeaders(),
+            method: "GET",
+            body: undefined as string,
+        };
+
+        if (this.accessToken) {
+            options.headers["X-Shopify-Access-Token"] = this.accessToken;
+        }
+
+        let url = new uri(this.shopDomain);
+        url.protocol("https");
+        url.path(this.joinUriPaths(this.resource, path));
+
+        if (payload) {
+            for (const prop in payload) {
+                const value = payload[prop];
+
+                // Shopify expects qs array values to be joined by a comma, e.g. fields=field1,field2,field3
+                url.addQueryParam(prop, Array.isArray(value) ? value.join(",") : value);
+            }
+        }
+
+
+        //Fetch will only throw an exception when there is a network-related error, not when Shopify returns a non-200 response.
+
+        /**
+         *  Queue requests and keep the call limit in check.
+         *
+         *  NOTE: this method is provisory. There are two problems with it:
+         *
+         *  1. the queue can become arbitrary large, with longer and longer wait times and
+         *  eventually memory problems, if an app just keeps on adding request after request.
+         *
+         *  2. There is still no guarantee that a `too many requests` (code 429) will not happen if a big number of requests is added at once.
+         * 
+         *  3. Page links inside of the headers are circular, with the final page link pointing at the first page of results.
+         */
+        let result = [];
+
+        // The final page of results will be linked back to the first page as the "next" page.
+        const visited = new Set();
+
+        while (url) {
+            const response = await BaseService.apiInfo[this.shopDomain].requestQueue.add(async () => {
+                // Check that we don't hit call limit
+                let remaining = this.getCallLimits().remaining;
+                if (remaining < 5) {
+                    return (new Promise(res => setTimeout(res, 10000 - remaining)))
+                    .then(() => fetch(url.toString(), options));
+                }
+                // console.log('Fetch url:', url.toString());
+                // console.log('options:', options)
+                return fetch(url.toString(), options);
+            });
+
+            const callLimits = response.headers.get('x-shopify-shop-api-call-limit');
+    
+            if (callLimits) {
+                BaseService.apiInfo[this.shopDomain].setCallLimits(callLimits);
+            }
+    
+            // Shopify implement 204 - no content for DELETE requests 
+            if (response.status == 204) {
+                break;
+            }
+
+            let json = await response.text() as any;
+
+            try {
+                json = JSON.parse(json);
+            }
+            catch (e) {
+                throw new ShopifyError(response, json);
+            }
+    
+            if (!response.ok) {
+                throw new ShopifyError(response, json);
+            }
+
+            result = result.concat(rootElement ? json[rootElement] as T : json as T);
+
+            const link: string = response.headers.get('link');
+
+            if (!link) {
+                break;
+            }
+
+            const links: string[] = link.match(/(?<=\<)(.*?)(?=\>)/) || [];
+            // If the request is on the first page, the "next" link will be the first element of the result.
+            // If a "previous" link is present, it will be the first element of the result and the "next" link will be the second element.
+            const nextLink: string = links.length === 2 ? links[1] : links[0];
+
+            // The final page of results will be linked back to the first page as the "next" page.
+            if (visited.has(nextLink)) {
+                break;
+            } else {
+                url = new uri(nextLink);
+                visited.add(nextLink);
+            }
+        }
+
+        return result;
+    }
 }
 
 export default BaseService;

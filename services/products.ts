@@ -58,6 +58,14 @@ export class Products extends BaseService {
     public delete(id: number) {
         return this.createRequest<{id: number}>("DELETE", `${id}.json`);
     }
+
+        /**
+     * Gets a list of all of the shop's Products.
+     * @param options Options for filtering the results.
+     */
+    public listAll(options?: Options.ProductListOptions) {
+        return this.createPaginatedRequest<Product[]>(".json", "products", options);
+    }
 }
 
 export default Products;
