@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 14
       - name: Installing dependencies
-        run: npm install
+        run: yarn install
       - name: Build
-        run: npm run prepublishOnly
+        run: yarn prepublishOnly
       - name: Publish to NPM
         uses: mikeal/merge-release@v4.0.7
         env:
