@@ -49,7 +49,7 @@ export class BaseService {
     constructor(private shopDomain: string, private accessToken: string, private resource: string) {
         //Ensure resource starts with admin/
         if (! /^[\/]?admin\//ig.test(resource)) {
-            this.resource = "admin/api/2024-04/" + resource;
+            this.resource = "admin/api/2024-07/" + resource;
         }
         if (!BaseService.apiInfo[shopDomain] || BaseService.apiInfo[shopDomain].accessToken !== accessToken) {
             BaseService.apiInfo[shopDomain] = new ApiInfo(accessToken);

@@ -1,9 +1,10 @@
 {
-    "name": "@inventora/shopify-admin-api",
+    "name": "inventora-shopify-admin-api",
     "version": "2.16.13",
     "description": "Shopify Admin API is a NodeJS library built to help developers easily authenticate and make calls against the Shopify API. It was inspired by and borrows heavily from ShopifySharp.",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
+    "private": false,
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ArtCodeStudio/shopify-admin-api.git"
@@ -68,7 +69,7 @@
     },
     "scripts": {
         "addTests": "ts-node .tasks/add-test-scripts.ts",
-        "prepublishOnly": "npm run barrel && npm run build",
+        "buildForPublish": "npm run barrel && npm run build",
         "pretsc": "rimraf dist",
         "tsc": "tsc -p .",
         "clean": "rm -rf ./dist",

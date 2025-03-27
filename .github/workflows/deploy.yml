@@ -19,7 +19,7 @@ jobs:
       - name: Installing dependencies
         run: npm install
       - name: Build
-        run: npm run prepublishOnly
+        run: npm run buildForPublish
       - name: Publish to NPM
         uses: mikeal/merge-release@v4.0.7
         env:
